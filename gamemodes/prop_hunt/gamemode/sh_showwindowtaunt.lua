@@ -1,5 +1,3 @@
-include("sh_init.lua")
-
 if SERVER then
 	util.AddNetworkString("CL2SV_PlayThisTaunt")
 	
@@ -27,7 +25,7 @@ if CLIENT then
 	
 	local function MainFrame()
 		if !GetConVar("ph_enable_custom_taunts"):GetBool() then
-			chat.AddText(Color(220,0,0),"[Taunt] This server has custom taunts disabled.")
+			chat.AddText(Color(220,0,0),"[PH: Enhanced - Taunt] Warning: This server has custom taunts disabled.")
 			return
 		end
 		
@@ -91,7 +89,7 @@ if CLIENT then
 					isplayed = true
 					timer.Simple(CUSTOM_TAUNT_DELAY, function() isplayed = false; end)
 				else
-					chat.AddText(Color(220,40,0),"[Taunt Warning] ",Color(220,220,220),"You have to wait "..CUSTOM_TAUNT_DELAY.." seconds to play this taunt again!")
+					chat.AddText(Color(220,40,0),"[PH: Enhanced - Taunt] Warning: ",Color(220,220,220),"You have to wait "..CUSTOM_TAUNT_DELAY.." seconds to play this taunt again!")
 				end
 			end
 			
@@ -111,7 +109,7 @@ if CLIENT then
 			MainFrame()
 		end	
 	else
-		chat.AddText(Color(220,40,0),"[Taunt Notice] ",Color(220,220,220),"You can play custom taunts only for Alive Props Team and you cannot play the taunts while you dead!")
+		chat.AddText(Color(220,40,0),"[PH: Enhanced - Taunt] Notice: ",Color(220,220,220),"You can only play custom taunts when you\'re Alive as a Prop and you can\'t play taunts while you dead!")
 	end
 	end, nil, "Show Prop Hunt taunt list, so You can select and play for self or play as a taunt.")
 	
@@ -122,7 +120,7 @@ if CLIENT then
 					MainFrame()
 				end
 			else
-				chat.AddText(Color(220,40,0),"[Taunt Notice] ",Color(220,220,220),"You can play custom taunts only for Alive Props Team and you cannot play the taunts while you dead!")
+				chat.AddText(Color(220,40,0),"[PH: Enhanced - Taunt] Notice: ",Color(220,220,220),"You can only play custom taunts when you\'re Alive as a Prop and you can\'t play taunts while you dead!")
 			end
 		end
 	end

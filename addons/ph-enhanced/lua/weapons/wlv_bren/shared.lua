@@ -2,6 +2,12 @@
 -- Bren MK II Weapon Swep: Wolvindra-Vinzuerio.
 -- This supposed to be a bonus weapon anyway. This gun was a collaboration with my friend (he now quit gmod) so I just want to ship it here :)
 
+if SERVER then
+	if engine.ActiveGamemode() != "prop_hunt" then
+		return
+	end
+end
+
 SWEP.Gun = ("wlv_bren")
 if (GetConVar(SWEP.Gun.."_allowed")) != nil then
 	if not (GetConVar(SWEP.Gun.."_allowed"):GetBool()) then SWEP.Base = "bobs_blacklisted" SWEP.PrintName = SWEP.Gun return end

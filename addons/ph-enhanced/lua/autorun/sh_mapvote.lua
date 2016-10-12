@@ -17,18 +17,19 @@ MapVoteConfigDefault = {
 --Default Config
 
 local convarlist = {
-	{var = "mv_maplimit", 		val = "24", 	flags = {FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE }, help = "numbers of map that shown on mapvote." },
-	{var = "mv_timelimit",		val = "28", 	flags = {FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE, FCVAR_NOTIFY }, help = "time in second for default mapvotes time." },
-	{var = "mv_allowcurmap",	val = "0", 	flags = {FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE }, help = "allow current map to be voted (1/0)" },
-	{var = "mv_cooldown",		val = "1", 	flags = {FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE, FCVAR_NOTIFY }, help = "enable cooldown for voting a map" },
-	{var = "mv_mapbeforerevote",	val = "2", 	flags = {FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE, FCVAR_NOTIFY }, help = "how many times that the map which cooldown can be shown again?" },
-	{var = "mv_rtvcount",		val = "3", 	flags = {FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE, FCVAR_NOTIFY }, help = "number of required players to use rtv mapvote." },
-	{var = "mv_mapprefix",		val = "ph_,cs_,de_", flags = {FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE }, help = "Map Prefixes that will be shown under mapvote. Use the following example:\n  \"ph_,cs_,de_\" (Dont forget to use quotation marks!)." }
+	{"mv_maplimit", 		"24",	{ FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE }, 				"numbers of map that shown on mapvote." },
+	{"mv_timelimit",		"28",	{ FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE, FCVAR_NOTIFY }, "time in second for default mapvotes time." },
+	{"mv_allowcurmap",		"0",	{ FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE }, 				"allow current map to be voted (1/0)" },
+	{"mv_cooldown",			"1",	{ FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE, FCVAR_NOTIFY }, "enable cooldown for voting a map" },
+	{"mv_mapbeforerevote",	"2", 	{ FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE, FCVAR_NOTIFY }, "how many times that the map which cooldown can be shown again?" },
+	{"mv_rtvcount",			"3", 	{ FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE, FCVAR_NOTIFY }, "number of required players to use rtv mapvote." },
+	{"mv_mapprefix",		"ph_,cs_,de_", { FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE }, 		"Map Prefixes that will be shown under mapvote. Use the following example:\n  \"ph_,cs_,de_\" (Dont forget to use quotation marks!)." }
 }
 
 if !ConVarExists("mv_maplimit") then
+	print("[MapVote] ConVars initialized!")
 	for _,convars in pairs(convarlist) do
-		CreateConVar(convars[var], convars[val], convars[flags], convars[help])
+		CreateConVar(convars[1], convars[2], convars[3], convars[4])
 	end
 end
 

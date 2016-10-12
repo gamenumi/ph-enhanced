@@ -5,6 +5,8 @@
 AddCSLuaFile("cl_init.lua")
 AddCSLuaFile("cl_menu.lua")
 AddCSLuaFile("sh_config.lua")
+AddCSLuaFile("taunts/hunter_taunts.lua")
+AddCSLuaFile("taunts/prop_taunts.lua")
 AddCSLuaFile("sh_init.lua")
 AddCSLuaFile("sh_player.lua")
 AddCSLuaFile("sh_showwindowtaunt.lua")
@@ -25,6 +27,21 @@ USABLE_PROP_ENTITIES = {
 	"prop_physics_multiplayer"
 }
 
+-- Player Join/Leave message
+-- Player Dis/Connect Event Listener
+gameevent.Listen( "player_connect" )
+hook.Add( "player_connect", "AnnouncePLJoin", function( data )
+	for k, v in pairs( player.GetAll() ) do
+		v:PrintMessage( HUD_PRINTTALK, data.name .. " has connected to the server." )
+	end
+end )
+
+gameevent.Listen( "player_disconnect" )
+hook.Add( "player_disconnect", "AnnouncePLLeave", function( data )
+	for k,v in pairs( player.GetAll() ) do
+		v:PrintMessage( HUD_PRINTTALK, data.name .. " has left the server (Reason: " .. data.reason ..")" )
+	end
+end )
 
 -- We're going to get the usable prop table and send it over to the client with this network string
 util.AddNetworkString("ServerUsablePropsToClient")

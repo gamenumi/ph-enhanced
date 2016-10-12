@@ -40,14 +40,48 @@ function GM:AddScoreboardAvatar( ScoreBoard )
 
 end
 
+function GM:AddScoreboardSpacer( ScoreBoard, iSize )
+	ScoreBoard:AddColumn( "", 16 )
+end
+
+function GM:AddScoreboardName( ScoreBoard )
+
+	local f = function( ply ) return ply:Name() end
+	ScoreBoard:AddColumn( "Name", nil, f, 10, nil, 4, 4 )
+
+end
+
+function GM:AddScoreboardKills( ScoreBoard )
+
+	local f = function( ply ) return ply:Frags() end
+	ScoreBoard:AddColumn( "Kills", 40, f, 0.5, nil, 6, 6 )
+
+end
+
+function GM:AddScoreboardDeaths( ScoreBoard )
+
+	local f = function( ply ) return ply:Deaths() end
+	ScoreBoard:AddColumn( "Deaths", 40, f, 0.5, nil, 6, 6 )
+
+end
+
+function GM:AddScoreboardPing( ScoreBoard )
+
+	local f = function( ply ) return ply:Ping() end
+	ScoreBoard:AddColumn( "Ping", 40, f, 0.1, nil, 6, 6 )
+
+end
+
 --[[
+// Scrapped. to do: fix me 
+
 function GM:AddScoreboardVoice( ScoreBoard )
 
    local f = function(ply)
 		local vc = vgui.Create("DImageButton", ScoreBoard)
 			vc:SetSize (16,16)
-			if self.Player != LocalPlayer() then
-				local muted = self.Player:IsMuted()
+			if ply != LocalPlayer() then
+				local muted = ply:IsMuted()
 				vc:SetImage(muted and "icon16/sound_mute.png" or "icon16/sound.png")
 			else
 				vc:Hide()
@@ -66,39 +100,7 @@ function GM:AddScoreboardVoice( ScoreBoard )
 	ScoreBoard:AddColumn( "Mute", 20, f, 0.5, nil, 6, 6 )
 
 end
-]]--
-
-function GM:AddScoreboardSpacer( ScoreBoard, iSize )
-	ScoreBoard:AddColumn( "", 16 ) // Gap
-end
-
-function GM:AddScoreboardName( ScoreBoard )
-
-	local f = function( ply ) return ply:Name() end
-	ScoreBoard:AddColumn( "Name", nil, f, 10, nil, 4, 4 )
-
-end
-
-function GM:AddScoreboardKills( ScoreBoard )
-
-	local f = function( ply ) return ply:Frags() end
-	ScoreBoard:AddColumn( "Kills", 50, f, 0.5, nil, 6, 6 )
-
-end
-
-function GM:AddScoreboardDeaths( ScoreBoard )
-
-	local f = function( ply ) return ply:Deaths() end
-	ScoreBoard:AddColumn( "Deaths", 50, f, 0.5, nil, 6, 6 )
-
-end
-
-function GM:AddScoreboardPing( ScoreBoard )
-
-	local f = function( ply ) return ply:Ping() end
-	ScoreBoard:AddColumn( "Ping", 50, f, 0.1, nil, 6, 6 )
-
-end
+]]
 
 // THESE SHOULD BE THE ONLY FUNCTION YOU NEED TO OVERRIDE
 
@@ -159,5 +161,5 @@ function GM:CreateScoreboard( ScoreBoard )
 		
 	// Here we sort by these columns (and descending), in this order. You can define up to 4
 	ScoreBoard:SetSortColumns( { 4, true, 5, false, 3, false } )
-
+	
 end

@@ -1,5 +1,9 @@
+-- Global Var for custom taunt, delivering from taunts/prop -or- hunter_taunts.lua
 PH_TAUNT_CUSTOM = {}
--- General Gamemode Config --
+include("taunts/hunter_taunts.lua")
+include("taunts/prop_taunts.lua")
+
+-- \\ General Gamemode Config // --
 
 -- Maximum time (in minutes) for this fretta gamemode (Default: 30)
 GAME_TIME = GetConVarNumber("ph_game_time")
@@ -144,14 +148,24 @@ PROP_TAUNTS = {
 }
 
 -- Add custom taunts, if any. See taunts/prop_taunts.lua or taunts/hunter_taunts.lua for more info.
-if PH_TAUNT_CUSTOM.PROP ~= nil then 
-	for k,prop in pairs(PH_TAUNT_CUSTOM.PROP) do table.insert(PROP_TAUNTS, prop) end
-else
-	print("[PH Taunts] : WARNING - Prop\'s custom taunts table is empty!")
+local function AddDemTaunt()
+	print("[PH: Enhanced] Adding custom prop taunts...")
+	if PH_TAUNT_CUSTOM.PROP != nil then
+		for k,prop in pairs(PH_TAUNT_CUSTOM.PROP) do 
+			table.insert(PROP_TAUNTS, prop)
+		end
+	else
+		print("[PH: Enhanced] WARNING! Custom taunts table is EMPTY!!")
+	end
+	
+	print("[PH: Enhanced] Adding custom hunter taunts...")
+	if PH_TAUNT_CUSTOM.HUNTER != nil then
+		for k,hunter in pairs(PH_TAUNT_CUSTOM.HUNTER) do 
+			table.insert(HUNTER_TAUNTS, hunter)
+		end
+	else
+		print("[PH: Enhanced] WARNING! Custom taunts table is EMPTY!!")
+	end
 end
 
-if PH_TAUNT_CUSTOM.HUNTER ~= nil then
-	for k,hunter in pairs(PH_TAUNT_CUSTOM.HUNTER) do table.insert(HUNTER_TAUNTS, hunter) end
-else
-	print("[PH Taunts] : WARNING - Hunter\'s custom taunts table is empty!")
-end
+AddDemTaunt()

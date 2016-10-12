@@ -2,21 +2,21 @@ local Ph = {}
 
 -- Warning: May Clutter as fuck... yiff, anything!
 
-Ph.txthelp = [[Welcome to Enhanced Prop Hunt!
-Prop Hunt is a twist on the classic backyard game Hide and Seek.
+Ph.txthelp = [[Welcome to Prop Hunt: Enhanced!
+Shortcuts:
+[F1] : Splash screen menu
+[F2] : Change Team
+[F3] : Play a taunts.
+[C] : Show Custom taunt window (if server enables it)
+[R] : Lock prop rotation
 
-More information can be found at [F1] Button.
-
-Both teams can press [F3] to play a taunt sound, with some extra taunts addition.
-
-Additionaly, there are more features with this Gamemode :
-  - Added new 'Lucky Ball' system: Break any Non-Player props to get the lucky ball. There is ~1% chance to get the drops.
-    The effects can be good, bad, or neutral luck. Doesn't apply for killing any Player Props.
-    The more players/props in current map, the more lucky ball drops can be obtained!
-  - Added new Player model selection (Server side: admins can enable/disable this feature.)
-  - Added new Props Player model (based Hunter's Player model too (make sure admin has enabled this))
-  - Added new Player Lists/Mute Options.
-  - And much more!
+Features:
+  - [NEW] Added new custom taunt window
+  - [NEW] Enhanced MapVote system with ConVar config
+  - [NEW] GitHub Repo is now available
+  - Enhanced codes and bug fixes
+  - Enhanced Lucky Ball system.
+  - Added Custom Hunter & Props playermodel
 
 Have fun!
 ]]
@@ -307,7 +307,7 @@ function ph_BaseMainWindow(ply, cmd, args)
 		local buttadmin = vgui.Create("DButton", panel)
 		buttadmin:SetPos(15,200)
 		buttadmin:SetSize(128,24)
-		buttadmin:SetText("Call MapVote")
+		buttadmin:SetText("Start MapVote")
 		buttadmin.DoClick = function()
 			ply:ConCommand("mapvote")
 			frm:Close()
@@ -325,7 +325,7 @@ function ph_BaseMainWindow(ply, cmd, args)
 		local lblx = vgui.Create("DLabel", panel)
 		lblx:SetPos(15,225)
 		lblx:SetSize(400,24)
-		lblx:SetText("* Make sure you have \'MapVote Fretta-like\' addon installed!")
+		lblx:SetText("To cancel mapvote, type !unmapvote or unmapvote in the console!")
 	
 	tab:AddSheet("Admins", panel, "icon16/user_gray.png")
 	end

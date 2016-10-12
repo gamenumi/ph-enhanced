@@ -2,22 +2,13 @@
 include("sh_config.lua")
 include("sh_player.lua")
 
-
--- Include the configuration for this map
-if file.Exists("../gamemodes/prop_hunt/gamemode/maps/"..game.GetMap()..".lua", "LUA") || file.Exists("../lua_temp/prop_hunt/gamemode/maps/"..game.GetMap()..".lua", "LUA") then
-	include("maps/"..game.GetMap()..".lua")
-end
-
-
 -- Fretta!
 DeriveGamemode("fretta")
 IncludePlayerClasses()
 
-
 -- Information about the gamemode
 GM.Name		= "Enhanced Prop Hunt"
 GM.Author	= "Wolvindra-Vinzuerio and D4UNKN0WNM4N2010 (Enhanced), original by Kowalski/AMT"
-
 
 -- Help info
 GM.Help = [[Prop Hunt is a twist on the classic backyard game Hide and Seek.
@@ -29,8 +20,7 @@ TEAM HUNTER:
 As a Hunter you will be blindfolded for the first ]]..HUNTER_BLINDLOCK_TIME..[[ seconds of the round while the Props hide. When your blindfold is taken off, you will need to find props controlled by players and kill them. Damaging non-player props will lower your health significantly. 
 However, killing a Prop will increase your health by ]]..HUNTER_KILL_BONUS..[[ points.
 
-Both teams can press [F3] to play a taunt sound.]]
-
+Both teams can press [F3] to play a taunt sound. Props can press [C] for custom taunts.]]
 
 -- Fretta configuration
 GM.GameLength				= GetConVarNumber("ph_game_time")
