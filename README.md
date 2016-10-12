@@ -23,9 +23,13 @@ This was contributted to the old Classic Prop Hunt as for the fixes on march 201
 * New Lucky Balls to get your lucky drops from the magic ball with extra drops
 * and many more!
 
+## Required Addons
+* ULX Admin Mods
+* ~~Mapvote~~ Improved MapVote system has been included in this gamemode so you dont have to modify /data/config.txt again.
+
 ## Workshop Version
 If you wanted for workshop version (ideal for personal/private gaming with your friends), you can [Get in here](https://steamcommunity.com/sharedfiles/filedetails/?id=417565863)
 
 ## Dedicated Server Manual, Helps, and Configs
-For more information about this gamemode, FAQs, Installation Instruction, Troubleshooting :
+For more information about this gamemode, FAQs, Installation Instruction, Known Issues & Troubleshooting :
 (Website is under progress) http://project.wolvindra.net/phe_faq
