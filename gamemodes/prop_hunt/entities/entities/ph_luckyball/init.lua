@@ -108,7 +108,7 @@ balls.funclists = {
 	function(pl)
 		if not pl:HasWeapon("weapon_bugbait") then
 			pl:Give("weapon_bugbait")
-			pl:ChatPrint("[Lucky Ball] You got a free BUGBAIT... which does nothing. (unless you pet an antlions!)")
+			pl:ChatPrint("[Lucky Ball] You got a free BUGBAIT... which does nothing. (unless you pet an antlion!)")
 		else
 			pl:ChatPrint(table.Random(balls.randomtext))
 		end
@@ -134,12 +134,12 @@ balls.funclists = {
 	
 
 function balls:The_LuckyDrop(pl)
-	-- for hunter only :3
+	-- For hunter only.
 	if pl:Team() == TEAM_HUNTERS && pl:Alive() then
 		balls.getfunction = table.Random(balls.funclists)
 		balls.getfunction(pl)
 	end
-	-- Other than that, It will return empty and do nothing. Based on your luck, so... good luck ^w^
+	-- Other than that, It will return empty and do nothing.
 end
 
 function ENT:Use(activator)
