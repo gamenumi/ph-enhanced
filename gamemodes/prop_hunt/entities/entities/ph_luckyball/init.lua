@@ -1,18 +1,3 @@
-
---[[
-	Usage: 
-	luckyball would only spawn when there is a map's prop that is about to break. (e.g: user is raging out and destroy the innocent prop_physics)
-
-	Please Note:
-	Force-Spawning may result in unbalancing gameplay. Admins/Owner should consider to avoid this way.
-
-	Description:
-	A Very Rare Drop. (8-9/1000 of chance, ..kindof.)
-	This entity will spawn after you break at the props and It'll give an extra.. 'Something' when a player is pressing +USE key.
-	Pretty based from Terraria/Minecraft. This drop can spawns something bad, good, neutral or doesn't do anything.
-	Why I do this because, I just want to add more 'arcade' stuff since Prop Hunt meant to be fun with Arcade features would be good idea :3
-]]--
-
 local balls = {}
 -- no.
 
