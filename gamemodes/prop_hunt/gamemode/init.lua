@@ -91,6 +91,8 @@ function GM:CheckPlayerDeathRoundEnd()
 end
 
 -- Player Voice & Chat Control to prevent Metagaming. (As requested by some server owners/suggestors.)
+-- You can disable this feature by typing 'sv_alltalk 1' in console to make everyone can hear.
+
 -- Control Player Voice
 local alltalk = GetConVar("sv_alltalk")
 function GM:PlayerCanHearPlayersVoice(listen, speaker)
