@@ -1,10 +1,19 @@
-# Wolvin's Prop Hunt: Enhanced (14 BETA)
+# Wolvin's Prop Hunt: Enhanced 14b
+
+Current version: 14, Revision: b, release type: Public
 
 ### Description
 Prop Hunt: Enhanced is an alternate, newer and enhanced version of the Gamemode from original prop hunt which was broken from last Garry's Mod's March 2015 update and decided to make as fixed and newer. This enhanced version is also pretty similar to the classic one, however several things like new codes, files and new features were added in the gamemode to make it
 more even better in prop hunt experience.
 
 This was contributted to the old Classic Prop Hunt as for the fixes on march 2015 update and also viewmodel fix additions.
+
+### Public Beta Test Server
+We currently hosted a Public Beta Test to experience the gamemode.
+
+You can join via IP here: **128.199.227.53:27015**
+
+If you experiences any client side issues or any client side lua errors, please report it by typing !issues in chat.
 
 ### Key Feature List
 * Prop Rotating
@@ -31,5 +40,11 @@ This was contributted to the old Classic Prop Hunt as for the fixes on march 201
 If you wanted for workshop version (ideal for personal/private gaming with your friends), you can [Get in here](https://steamcommunity.com/sharedfiles/filedetails/?id=417565863)
 
 ## Dedicated Server Manual, Helps, and Configs
-For more information about this gamemode, FAQs, Installation Instruction, Known Issues & Troubleshooting :
-(Website is under progress) http://project.wolvindra.net/phe_faq
+If you are looking for Gamemode manual, helps, installing (for dedicated server owners), console commands & convars, known issues, Please proceed by clicking on this link:
+
+http://project.wolvindra.net/phe_faq
+
+## Reporting an Issue
+Please provide information with detail so we know what's the actual problem that can occurs on your side. This issue page is not a place for asking help.
+
+If you wish to use help, please open a discussion thread from workshop [HERE](http://steamcommunity.com/sharedfiles/filedetails/discussions/417565863).
