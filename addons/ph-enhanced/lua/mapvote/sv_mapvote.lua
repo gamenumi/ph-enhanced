@@ -41,7 +41,7 @@ if ConVarExists("mv_maplimit") then
 		AllowCurrentMap = GetConVar("mv_allowcurmap"):GetBool(),
 		EnableCooldown 	= GetConVar("mv_cooldown"):GetBool(),
 		MapsBeforeRevote = GetConVar("mv_mapbeforerevote"):GetBool(),
-		RTVPlayerCount 	= GetConVar("mv_rtvcount"):GetBool(),
+		RTVPlayerCount 	= GetConVar("mv_rtvcount"):GetInt(),
 		MapPrefixes 	= string.Explode(",", GetConVar("mv_mapprefix"):GetString())
 	}
 else
