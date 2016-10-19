@@ -1,6 +1,6 @@
-# Wolvin's Prop Hunt: Enhanced 14b
+# Wolvin's Prop Hunt: Enhanced 14c
 
-Current version: 14, Revision: b, release type: Public
+Current version: 14, Revision: c, release type: Public
 
 ### Description
 Prop Hunt: Enhanced is an alternate, newer and enhanced version of the Gamemode from original prop hunt which was broken from last Garry's Mod's March 2015 update and decided to make as fixed and newer. This enhanced version is also pretty similar to the classic one, however several things like new codes, files and new features were added in the gamemode to make it
