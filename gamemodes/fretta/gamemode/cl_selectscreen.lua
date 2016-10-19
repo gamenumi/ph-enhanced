@@ -300,7 +300,9 @@ function GM:ShowTeam()
 			
 		end
 		
-		TeamPanel:AddCancelButton()
+		if (  IsValid( LocalPlayer() ) && LocalPlayer():Team() == TEAM_UNASSIGNED ) then
+			TeamPanel:AddCancelButton()
+		end
 		
 	end
 	
