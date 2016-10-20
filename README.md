@@ -1,4 +1,4 @@
-# Wolvin's Prop Hunt: Enhanced 14b
+# Wolvin's Prop Hunt: Enhanced 14c
 
 Current version: 14, Revision: b, release type: Public
 
@@ -43,6 +43,9 @@ If you wanted for workshop version (ideal for personal/private gaming with your 
 If you are looking for Gamemode manual, helps, installing (for dedicated server owners), console commands & convars, known issues, Please proceed by clicking on this link:
 
 http://project.wolvindra.net/phe_faq
+
+## Prop Lock Implementation (for Non-PH: Enhanced)
+Prop-Lock is available which you can implement to your version of prop hunt, which you can obtain the code here: https://github.com/daunknownman2010/ph-rotation
 
 ## Reporting an Issue
 Please provide information with detail so we know what's the actual problem that can occurs on your side. This issue page is not a place for asking help.
