@@ -34,7 +34,7 @@ If you experiences any client side issues or any client side lua errors, please 
 
 ## Required Addons
 * ULX Admin Mods
-* (Optional) M9K Base. You can optionally subscribe the M9K weapon base if you wish to use default weapon base for bonus weapon.
+* (Optional) M9K Base. You can optionally subscribe the M9K weapon base if you wish to use custom weapon base for bonus weapon, otherwise default sandbox's weapon base.
 * ~~Mapvote~~ Improved and Updated MapVote system has been included in this gamemode so you dont have to modify /data/config.txt again.
 
 ## Workshop Version
