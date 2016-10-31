@@ -34,7 +34,8 @@ If you experiences any client side issues or any client side lua errors, please 
 
 ## Required Addons
 * ULX Admin Mods
-* ~~Mapvote~~ Improved MapVote system has been included in this gamemode so you dont have to modify /data/config.txt again.
+* (Optional) M9K Base. You can optionally subscribe the M9K weapon base if you wish to use default weapon base for bonus weapon.
+* ~~Mapvote~~ Improved and Updated MapVote system has been included in this gamemode so you dont have to modify /data/config.txt again.
 
 ## Workshop Version
 If you wanted for workshop version (ideal for personal/private gaming with your friends), you can [Get in here](https://steamcommunity.com/sharedfiles/filedetails/?id=417565863)
