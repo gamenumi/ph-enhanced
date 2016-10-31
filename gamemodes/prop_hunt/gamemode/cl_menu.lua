@@ -12,7 +12,7 @@ Shortcuts:
 
 Features:
   - [NEW] Added new custom taunt window
-  - [NEW] Enhanced MapVote system with ConVar config
+  - [NEW] Enhanced system with ConVar config
   - [NEW] GitHub Repo is now available
   - Enhanced codes and bug fixes
   - Enhanced Lucky Ball system.
@@ -309,7 +309,7 @@ function ph_BaseMainWindow(ply, cmd, args)
 		buttadmin:SetSize(128,24)
 		buttadmin:SetText("Start MapVote")
 		buttadmin.DoClick = function()
-			ply:ConCommand("mapvote")
+			ply:ConCommand("map_vote")
 			frm:Close()
 		end
 		
@@ -318,7 +318,7 @@ function ph_BaseMainWindow(ply, cmd, args)
 		buttadmin2:SetSize(128,24)
 		buttadmin2:SetText("Stop MapVote")
 		buttadmin2.DoClick = function()
-			ply:ConCommand("unmapvote")
+			ply:ConCommand("unmap_vote")
 			frm:Close()
 		end
 		
