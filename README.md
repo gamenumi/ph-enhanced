@@ -2,6 +2,9 @@
 
 Current version: 14, Revision: d, release type: Public
 
+### 14E BETA Version (Staging Release Branch)
+If you wish to use a Beta version of version 14e, you can use from following this [Branched version.](https://github.com/Vinzuerio/ph-enhanced/tree/daunknownman2010-staging)
+
 ### Description
 Prop Hunt: Enhanced is an alternate, newer and enhanced version of the Gamemode from original prop hunt which was broken from last Garry's Mod's March 2015 update and decided to make as fixed and newer. This enhanced version is also pretty similar to the classic one, however several things like new codes, files and new features were added in the gamemode to make it
 more even better in prop hunt experience.
