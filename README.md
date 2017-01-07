@@ -12,11 +12,7 @@ more even better in prop hunt experience.
 This was contributted to the old Classic Prop Hunt as for the fixes on march 2015 update and also viewmodel fix additions.
 
 ### Public Beta Test Server
-We currently hosted a Public Beta Test to experience the gamemode.
-
-You can join via IP here: **128.199.227.53:27015**
-
-If you experiences any client side issues or any client side lua errors, please report it by typing !issues in chat.
+*Current sever and development status is on hold, there was a problem related to the server and will inform if everything is solved.*
 
 ### Key Feature List
 * Prop Rotating
