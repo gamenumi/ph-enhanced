@@ -2,22 +2,19 @@ local Ph = {}
 
 -- Warning: May Clutter as fuck... yiff, anything!
 
-Ph.txthelp = [[Welcome to Prop Hunt: Enhanced! -todo edit me :c
+Ph.txthelp = [[Welcome to Prop Hunt: Enhanced! [14 G]
 Shortcuts:
 [F1] : Splash screen menu
 [F2] : Change Team
-[F3] : Play a taunts.
-[C] : Show Custom taunt window (if server enables it)
+[F3] or [C] : Play a taunt.
 [R] : Lock prop rotation
 
 Features:
-  - [NEW] Added new custom taunt window
-  - [NEW] Enhanced system with ConVar config
-  - [NEW] GitHub Repo is now available
-  - Enhanced codes and bug fixes
+  - [NEW] New mute system.
+  - Changed some codes and variables + new hooks
+  - Fixed ConVars that not being networked properly
+  - GitHub Repo: 14g
   - Enhanced Lucky Ball system.
-  - Added Custom Hunter & Props playermodel
-
 Have fun!
 ]]
 
