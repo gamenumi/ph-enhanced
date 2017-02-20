@@ -1,7 +1,9 @@
 -- Include these
 include("sh_init.lua")
-include("sh_showwindowtaunt.lua")
+
 include("cl_menu.lua")
+include("cl_tauntwindow.lua")
+include("cl_mutewindow.lua")
 include("cl_targetid.lua")
 
 -- Convars are bad at networking sometimes
@@ -26,12 +28,12 @@ end
 net.Receive("PH_CameraCollisions", PH_CameraCollisions)
 
 function PH_CustomTauntEnabled(len)
-	CUSTOM_TAUNT_ENABLED = net.ReadBool()
+	PHE.CUSTOM_TAUNT_ENABLED = net.ReadBool()
 end
 net.Receive("PH_CustomTauntEnabled", PH_CustomTauntEnabled)
 
 function PH_CustomTauntDelay(len)
-	CUSTOM_TAUNT_DELAY = net.ReadInt(8)
+	PHE.CUSTOM_TAUNT_DELAY = net.ReadInt(8)
 end
 net.Receive("PH_CustomTauntDelay", PH_CustomTauntDelay)
 

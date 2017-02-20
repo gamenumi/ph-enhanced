@@ -1,6 +1,6 @@
-# Wolvin's Prop Hunt: Enhanced 14f
+# Wolvin's Prop Hunt: Enhanced 14g
 
-Current version: 14, Revision: f, release type: Public
+Current version: 14, Revision: g, release type: Public
 
 ### Description
 Prop Hunt: Enhanced is an alternate, newer and enhanced version of the Gamemode from original prop hunt which was broken from last Garry's Mod's March 2015 update and decided to make as fixed and newer. This enhanced version is also pretty similar to the classic one, however several things like new codes, files and new features were added in the gamemode to make it
@@ -39,10 +39,10 @@ If you experiences any client side issues or any client side lua errors, please 
 * ~~Mapvote~~ Improved and Updated MapVote system has been included in this gamemode so you dont have to modify /data/config.txt again.
 
 ## Workshop Version
-If you wanted for workshop version (ideal for personal/private gaming with your friends), you can [Get in here](https://steamcommunity.com/sharedfiles/filedetails/?id=417565863)
+If you wanted for workshop version (ideal for personal/private gaming with your friends), you can [Get it here.](https://steamcommunity.com/sharedfiles/filedetails/?id=417565863)
 
 ## Dedicated Server Manual, Helps, and Configs
-If you are looking for Gamemode manual, helps, installing (for dedicated server owners), console commands & convars, known issues, Please proceed by clicking on this link:
+If you are looking for Gamemode manual, helps, installing (for dedicated server owners), console commands/convars, known issues, Please proceed by clicking on this link:
 
 http://project.wolvindra.net/phe_faq
 
