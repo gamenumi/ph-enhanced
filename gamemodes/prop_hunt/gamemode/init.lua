@@ -307,7 +307,7 @@ function GM:ShowSpare1(pl)
 		pl:ConCommand("ph_showtaunts")
 	end
 	
-	if !GetConVar("ph_enable_custom_taunts"):GetBool() && GAMEMODE:InRound() && pl:Alive() && (pl:Team() == TEAM_HUNTERS || pl:Team() == TEAM_PROPS) && pl.last_taunt_time + TAUNT_DELAY <= CurTime() && #PROP_TAUNTS > 1 && #HUNTER_TAUNTS > 1 then
+	if !GetConVar("ph_enable_custom_taunts"):GetBool() && GAMEMODE:InRound() && pl:Alive() && (pl:Team() == TEAM_HUNTERS || pl:Team() == TEAM_PROPS) && pl.last_taunt_time + PHE.TAUNT_DELAY <= CurTime() && #PROP_TAUNTS > 1 && #HUNTER_TAUNTS > 1 then
 		repeat
 			if pl:Team() == TEAM_HUNTERS then
 				rand_taunt = table.Random(HUNTER_TAUNTS)
