@@ -316,7 +316,7 @@ function GM:ShowSpare1(pl)
 			end
 		until rand_taunt != pl.last_taunt
 		
-		pl.last_taunt_time = CurTime() + TAUNT_DELAY
+		pl.last_taunt_time = CurTime() + PHE.TAUNT_DELAY
 		pl.last_taunt = rand_taunt
 		
 		pl:EmitSound(rand_taunt, 100)
