@@ -1,6 +1,6 @@
-# Wolvin's Prop Hunt: Enhanced 14g
+# Wolvin's Prop Hunt: Enhanced 14h
 
-Current version: 14, Revision: g, release type: Public
+Current version: 14, Revision: h, release type: Public
 
 ### Description
 Prop Hunt: Enhanced is an alternate, newer and enhanced version of the Gamemode from original prop hunt which was broken from last Garry's Mod's March 2015 update and decided to make as fixed and newer. This enhanced version is also pretty similar to the classic one, however several things like new codes, files and new features were added in the gamemode to make it
@@ -13,7 +13,7 @@ We currently hosted a Public Beta Test to experience the gamemode.
 
 You can join via IP here: **128.199.238.151:27015**
 
-If you experiences any client side issues or any client side lua errors, please report it by typing !issues in chat.
+If you experiences any client side issues or any client side lua errors, please report it by typing !issue in chat.
 
 ### Key Feature List
 * Prop Rotating
@@ -31,6 +31,9 @@ If you experiences any client side issues or any client side lua errors, please 
 * Improved & Added extra Help menu
 * New Lucky Balls to get your lucky drops from the magic ball with extra drops
 * Custom Prop Hunt Hooks (see: http://project.wolvindra.net/phe_faq/#game_hooks)
+* Updated props prediction (lag compesated) so players can now shoot them with proper
+* New Sound cue when round is about to end
+* Added "Waiting for Players..." option, with numbers of minimum player settings
 * and many more!
 
 ## Required Addons
