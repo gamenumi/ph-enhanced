@@ -50,6 +50,8 @@ end
 -- Round Control
 if !ConVarExists("ph_waitforplayers") then
 	local ph_waitforplayers = CreateConVar( "ph_waitforplayers", "1", { FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE, FCVAR_NOTIFY }, "Should we wait for players for proper round?" )
+end
+if !ConVarExists("ph_min_waitforplayers") then
 	local ph_min_waitforplayers = CreateConVar( "ph_min_waitforplayers", "1", { FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE }, "Numbers of mininum players that we should wait for round start. Value must not contain less than 1." )
 end
 
