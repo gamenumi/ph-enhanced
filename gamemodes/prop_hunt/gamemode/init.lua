@@ -421,6 +421,10 @@ function GM:OnPreRoundStart(num)
 	game.CleanUpMap()
 	
 	if GetGlobalInt("RoundNumber") != 1 && (PHE.SWAP_TEAMS_EVERY_ROUND == 1 || ((team.GetScore(TEAM_PROPS) + team.GetScore(TEAM_HUNTERS)) > 0)) then
+	--[[if ( GetConVar("ph_waitforplayers"):GetBool() && 
+		( team.NumPlayers( TEAM_HUNTERS ) >= GetConVar("ph_min_waitforplayers"):GetInt() ) && ( team.NumPlayers( TEAM_PROPS ) >= GetConVar("ph_min_waitforplayers"):GetInt() ) && 
+		(PHE.SWAP_TEAMS_EVERY_ROUND == 1 || ((team.GetScore(TEAM_PROPS) + team.GetScore(TEAM_HUNTERS)) > 0))) then
+		]]--
 		for _, pl in pairs(player.GetAll()) do
 			if pl:Team() == TEAM_PROPS || pl:Team() == TEAM_HUNTERS then
 				if pl:Team() == TEAM_PROPS then
@@ -472,6 +476,8 @@ function GM:Think()
 			end
 		end
 	end
+	
+	--MsgAll("ROUND IS NOW: "..GetGlobalInt("RoundNumber").."\n")
 	
 	-- Extra check here for changes cvars
 	if PHE.UPDATE_CVAR_TO_VARIABLE < CurTime() then
@@ -566,14 +572,14 @@ function GM:OnRoundEnd( num )
 			bAlreadyStarted = false
 		end
 
-		-- Check if the round was already started before so we count it as a fully played round
-		if ( !bAlreadyStarted ) then
-			SetGlobalInt( "RoundNumber", GetGlobalInt( "RoundNumber" )-1 )
-		end
-
 		-- Set to true
 		if ( ( team.NumPlayers( TEAM_HUNTERS ) >= PHE.MIN_PLY ) && ( team.NumPlayers( TEAM_PROPS ) >= PHE.MIN_PLY ) ) then
 			bAlreadyStarted = true
+		end
+		
+		-- Check if the round was already started before so we count it as a fully played round
+		if ( !bAlreadyStarted ) then
+			SetGlobalInt( "RoundNumber", GetGlobalInt("RoundNumber") - 1 )
 		end
 	end
 end
@@ -606,7 +612,9 @@ function GM:RoundStart()
 				SetGlobalFloat( "RoundEndTime", -1 );
 			
 				PrintMessage( HUD_PRINTTALK, "There's not enough players to start the game!" )
-			
+				-- Reset the team score
+				team.SetScore(TEAM_PROPS, 0)
+				team.SetScore(TEAM_HUNTERS, 0)
 			end
 		
 		end

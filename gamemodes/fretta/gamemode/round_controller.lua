@@ -14,7 +14,7 @@ function GM:OnRoundStart( num )
 
 end
 
-local bAlreadyStarted = false
+--local bAlreadyStarted = false
 --[[moved to prop hunt's init.lua 
 function GM:OnRoundEnd( num )
 
