@@ -56,13 +56,13 @@ if !ConVarExists("ph_min_waitforplayers") then
 end
 
 -- Verbose mode
-function printverbose(text)
-	if PRINT_VERBOSE_ENABLED && text then
-		print(tostring(text))
-	end
-end
 if !ConVarExists("ph_print_verbose") then
 	local ph_print_verbose = CreateConVar("ph_print_verbose", "0", { FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE }, "Developer Verbose. Some printed messages will only appear if this is enabled.")
+end
+function printverbose(text)
+	if PHE.PRINT_VERBOSE_ENABLED && text then
+		print(tostring(text))
+	end
 end
 
 -- shared variable
