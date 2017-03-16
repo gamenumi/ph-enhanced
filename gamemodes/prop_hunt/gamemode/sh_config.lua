@@ -1,6 +1,3 @@
--- Verbose mode (print extra stuff in console) boolean (Default: false)
-PHE.PRINT_VERBOSE_ENABLED = GetConVar("ph_print_verbose"):GetBool()
-
 -- Global Var for custom taunt, delivering from taunts/prop -or- hunter_taunts.lua
 PHE.PH_TAUNT_CUSTOM = {}
 PHE.PH_TAUNT_FILE_LIST = {}

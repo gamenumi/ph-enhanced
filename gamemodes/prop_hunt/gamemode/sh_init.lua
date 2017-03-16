@@ -1,3 +1,6 @@
+-- init the shared variable
+PHE = {}
+
 -- PROP HUNT: ENHANCED CONVARS
 -- Playermodels controls convars
 if !ConVarExists("ph_use_custom_plmodel_for_prop") then
@@ -60,13 +63,11 @@ if !ConVarExists("ph_print_verbose") then
 	local ph_print_verbose = CreateConVar("ph_print_verbose", "0", { FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE }, "Developer Verbose. Some printed messages will only appear if this is enabled.")
 end
 function printverbose(text)
-	if PHE.PRINT_VERBOSE_ENABLED && text then
+	if GetConVar("ph_print_verbose"):GetBool() && text then
 		print(tostring(text))
 	end
 end
 
--- shared variable
-PHE = {}
 -- Add the shared config file
 AddCSLuaFile("sh_config.lua")
 
