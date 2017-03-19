@@ -388,14 +388,14 @@ end
 hook.Add("PlayerSpawn", "PH_PlayerSpawn", PlayerSpawn)
 
 
--- Called when round ends
+-- Called when round ends, just to make sure hunters are remain unblinded (usually for short timer/testing)
 function RoundEnd()
 	for _, pl in pairs(team.GetPlayers(TEAM_HUNTERS)) do
 		pl:Blind(false)
 		pl:UnLock()
 	end
 end
-hook.Add("RoundEnd", "PH_RoundEnd", RoundEnd)
+hook.Add("PH_RoundEnd", "PH.ForceHuntersUnblind", RoundEnd)
 
 
 -- This is called when the round time ends (props win)
@@ -575,6 +575,9 @@ function GM:OnRoundEnd( num )
 			SetGlobalInt( "RoundNumber", GetGlobalInt("RoundNumber") - 1 )
 		end
 	end
+	
+	hook.Call("PH_OnRoundEnd", nil, num)
+	
 end
 
 function GM:RoundStart()
@@ -616,6 +619,8 @@ function GM:RoundStart()
 	
 	-- Send this as a global boolean
 	SetGlobalBool( "RoundWaitForPlayers", PHE.WAIT_FOR_PLY )
+	
+	hook.Call("PH_RoundStart", nil)
 	
 end
 -- End of Round Control Override
