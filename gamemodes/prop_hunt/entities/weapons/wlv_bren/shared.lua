@@ -3,6 +3,8 @@
 
 -- This supposed to be a bonus weapon anyway. This gun was a collaboration with my friend (which is now he quits gmod) so I just want to ship it here :)
 
+-- // Update TFA Supports: Recoil is now adjusted \\
+
 if GetConVar("DebugM9K") != nil then -- check if M9K is Exists on server. otherwise will use from Default base instead.
 
 	SWEP.Gun = ("wlv_bren")

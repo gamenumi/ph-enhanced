@@ -1,11 +1,11 @@
 -- Configure your admin/mod/vip list so they cannot be muted for a reason.
 local AdminList = {
+	-- admin
 	"superadmin",
 	"admin",
-	
 	"Owner",
 	"Co-owner",
-	
+	-- Misc users
 	"Developer",
 	"Moderator",
 	
