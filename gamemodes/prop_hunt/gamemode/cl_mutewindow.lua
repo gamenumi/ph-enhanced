@@ -6,10 +6,10 @@ local AdminList = {
 	"Owner",
 	"Co-owner",
 	
-	"developer",
-	"moderator",
+	"Developer",
+	"Moderator",
 	
-	"vip"
+	"VIP"
 }
 
 function ph_MutePlayer(ply,cmd,arg,args)

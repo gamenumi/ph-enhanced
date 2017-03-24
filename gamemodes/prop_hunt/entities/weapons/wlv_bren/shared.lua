@@ -53,9 +53,9 @@ if GetConVar("DebugM9K") != nil then -- check if M9K is Exists on server. otherw
 	SWEP.Primary.RPM			= 500
 	SWEP.Primary.ClipSize		= 30
 	SWEP.Primary.DefaultClip	= 90
-	SWEP.Primary.KickUp			= 1.8
-	SWEP.Primary.KickDown		= 1.4
-	SWEP.Primary.KickHorizontal	= 1.45
+	SWEP.Primary.KickUp			= 0.85
+	SWEP.Primary.KickDown		= 0.6
+	SWEP.Primary.KickHorizontal	= 0.5
 	SWEP.Primary.Automatic		= true
 	SWEP.Primary.Ammo			= "ar2"
 
@@ -65,7 +65,7 @@ if GetConVar("DebugM9K") != nil then -- check if M9K is Exists on server. otherw
 	SWEP.data.ironsights		= 1
 
 	SWEP.Primary.NumShots		= 1
-	SWEP.Primary.Damage			= 35	-- 35 for PH is bit OP, but hopefully this already balance the game since this is a rare drop.
+	SWEP.Primary.Damage			= 10	-- 35 for PH is bit OP, but hopefully this already balance the game since this is a rare drop.
 	SWEP.Primary.Spread			= .025
 	SWEP.Primary.IronAccuracy 	= .01
 
