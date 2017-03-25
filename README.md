@@ -11,7 +11,11 @@ This was contributted to the old Classic Prop Hunt as for the fixes on march 201
 ### Public Beta Test Server
 We currently hosted a Public Beta Test to experience the gamemode.
 
-You can join via IP here: **128.199.238.151:27015**
+You can join via IP here: 
+
+**ASIA: 128.199.238.151:27015**
+
+**USA: 99.228.146.174:27015**
 
 If you experiences any client side issues or any client side lua errors, please report it by typing !issue in chat.
 
