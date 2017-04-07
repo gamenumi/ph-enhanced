@@ -206,7 +206,9 @@ function EntityTakeDamage(ent, dmginfo)
 	
 	-- Code from: https://facepunch.com/showthread.php?t=1500179 , Special thanks from AlcoholicoDrogadicto(http://steamcommunity.com/profiles/76561198082241865/) for suggesting this.
     if GAMEMODE:InRound() && ent && ent:IsPlayer() && ent:Alive() && ent:Team() == TEAM_PROPS && ent.ph_prop then
-        --Debug purpose.
+		-- Prevent Prop 'Friendly Fire'
+		if ( dmginfo:GetAttacker():IsPlayer() && dmginfo:GetAttacker():Team() == ent:Team() ) then printverbose("DMGINFO::ATTACKED!!-> "..tostring(dmginfo:GetAttacker())..", DMGTYPE: "..dmginfo:GetDamageType()); return end
+		--Debug purpose.
 		printverbose("!! " .. ent:Name() .. "'s PLAYER entity appears to have taken damage, we can redirect it to the prop! (Model is: " .. ent.ph_prop:GetModel() .. ")")
         ent.ph_prop:TakeDamageInfo(dmginfo)
         return
@@ -254,7 +256,10 @@ local playerModels = {
 function GM:PlayerSetModel(pl)
 	-- set antlion gib small for Prop model. 
 	-- Do not change this into others because this might purposed as a hitbox for props.
-	local player_model = "models/gibs/antlion_gib_small_3.mdl" -- todo: change into the smallest block from PHX's props.
+	
+	-- (Old) local player_model = "models/gibs/antlion_gib_small_3.mdl"
+	-- (backup) models/hunter/plates/plate025.mdl
+	local player_model = "models/hunter/plates/plate.mdl"
 
 	-- Clean Up.
 	if GetConVar("ph_use_custom_plmodel"):GetBool() then

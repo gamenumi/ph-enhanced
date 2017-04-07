@@ -63,9 +63,7 @@ end
 
 -- Hands
 function CLASS:GetHandsModel()
-
 	return
-
 end
 
 
