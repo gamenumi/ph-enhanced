@@ -4,7 +4,7 @@ Current version: 14, Revision: h, release type: Public
 
 ### Upcoming v15 Notice
 - We're currently investigating and try to fix some internal issues related to PH:E. Any upcoming/new issues and problems will soon be included and patched after v.15 update has been released.
-- Be sure to check our issues lists. If there's some any serious problem that occurs both in Server and Client side of PH:E, please report them by creating new issues in [https://github.com/Vinzuerio/ph-enhanced/issues](Issue tracker here).
+- Be sure to check our issues lists. If there's some any serious problem that occurs both in Server and Client side of PH:E, please report them by creating new issues in [Issue Tracker Here.](https://github.com/Vinzuerio/ph-enhanced/issues).
 
 ### Description
 Prop Hunt: Enhanced is an alternate, newer and enhanced version of the Gamemode from original prop hunt which was broken from last Garry's Mod's March 2015 update and decided to make as fixed and newer. This enhanced version is also pretty similar to the classic one, however several things like new codes, files and new features were added in the gamemode to make it
