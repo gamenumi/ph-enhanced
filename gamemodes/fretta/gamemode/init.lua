@@ -117,7 +117,8 @@ end
 ---------------------------------------------------------*/
 function GM:PlayerInitialSpawn( pl )
 
-	pl:SetTeam( TEAM_UNASSIGNED )
+	--pl:SetTeam( TEAM_UNASSIGNED )
+	pl:SetTeam( TEAM_SPECTATOR )
 	pl:SetPlayerClass( "Spectator" )
 	pl.m_bFirstSpawn = true
 	pl:UpdateNameColor()
@@ -184,10 +185,14 @@ function GM:PlayerSpawn( pl )
 			GAMEMODE:PlayerSpawnAsSpectator( pl )
 			
 			// Follow a random player until we join a team
+			--[[
 			if ( #player.GetAll() > 1 ) then
 				pl:Spectate( OBS_MODE_CHASE )
 				pl:SpectateEntity( table.Random( player.GetAll() ) )
 			end
+			]]--
+			
+			pl:Spectate( OBS_MODE_ROAMING )
 			
 		end
 	

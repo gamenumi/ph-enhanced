@@ -198,6 +198,8 @@ function GM:PlayerCanSeePlayersChat(txt, onteam, listen, speaker)
 
 	-- Spectator can only read from themselves.
 	if listen:Team() == TEAM_SPECTATOR && listen:Alive() && speaker:Alive() then return false end
+	
+	return true
 end
 
 -- Called when an entity takes damage

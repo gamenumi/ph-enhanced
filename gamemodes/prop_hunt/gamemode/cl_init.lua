@@ -221,7 +221,7 @@ end
 usermessage.Hook("SetBlind", SetBlind)
 
 -- here you can add more than 2 additional freeze cam sounds. Every list ends with commas.
-local rndfrz = {
+PHE.FreezeCamSnd = {
 	"misc/freeze_cam.wav",
 	"misc/freeze_cam_sad1.wav"
 }
@@ -229,7 +229,7 @@ local rndfrz = {
 -- Plays the Freeze Cam sound
 function PlayFreezeCamSound(um)
 	-- surface.PlaySound("misc/freeze_cam.wav") // if you want single Freeze Cam Sound instead 2, uncomment this, and comment below.
-	surface.PlaySound(table.Random(rndfrz))
+	surface.PlaySound(table.Random(PHE.FreezeCamSnd))
 end
 usermessage.Hook("PlayFreezeCamSound", PlayFreezeCamSound)
 
