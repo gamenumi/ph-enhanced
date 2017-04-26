@@ -10,6 +10,9 @@ CLASS.RunSpeed				= 275
 CLASS.DuckSpeed				= 0.2
 CLASS.DrawTeamRing			= false
 
+-- Prevent 'mod_studio: MOVETYPE_FOLLOW with No Models error.'
+CLASS.DrawViewModel			= false
+
 
 -- Called by spawn and sets loadout
 function CLASS:Loadout(pl)
@@ -24,6 +27,9 @@ function CLASS:OnSpawn(pl)
 	pl:SetCustomCollisionCheck(true)
 	pl:SetAvoidPlayers(true)
 	pl:CrosshairDisable()
+	
+	-- Prevent 'mod_studio: MOVETYPE_FOLLOW with No Models error.'
+	pl:DrawViewModel(false)
 	
 	pl.ph_prop = ents.Create("ph_prop")
 	pl.ph_prop:SetPos(pl:GetPos())
