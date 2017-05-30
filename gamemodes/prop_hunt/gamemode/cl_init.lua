@@ -6,6 +6,8 @@ include("cl_tauntwindow.lua")
 include("cl_mutewindow.lua")
 include("cl_targetid.lua")
 
+include("cl_autotaunt.lua")
+
 -- Convars are bad at networking sometimes
 CL_BETTER_PROP_MOVEMENT = true
 CL_CAMERA_COLLISIONS = false
