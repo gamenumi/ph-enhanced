@@ -13,10 +13,6 @@ local h = 30
 local previousTime
 local tweenTime = 0
 
-local function log(value)
-    chat.AddText(tostring(value))
-end
-
 local function TimeLeft()
     local ply = LocalPlayer()
     local lastTauntTime = ply.last_taunt_time
@@ -88,7 +84,6 @@ local function CheckAutoTaunt()
 end
 
 local function Setup()
-    log("[Setup]")
     local ply = LocalPlayer()
 
     isEnabled = GetConVar("ph_autotaunt_enabled"):GetBool()
@@ -98,7 +93,6 @@ local function Setup()
     tweenTime = 0
 
     if isEnabled && isProp then
-        log("Creating timer")
         delay = GetConVarNumber("ph_autotaunt_delay")
         timer.Create(timerID, 1, 0, CheckAutoTaunt)
         ply.last_taunt_time = CurTime()
@@ -106,7 +100,6 @@ local function Setup()
 end
 
 local function CheckPlayer()
-    log("[CheckPlayer]")
     local ply = LocalPlayer()
 
     if ply:Team() == TEAM_PROPS then
@@ -122,8 +115,6 @@ local function CheckPlayer()
 end
 
 local function AutoTauntSpawn()
-    log("[AutoTauntSpawn]")
-
     xStart = ScrW() + 200
     xEnd = ScrW() - 195
     y = ScrH() - 65
