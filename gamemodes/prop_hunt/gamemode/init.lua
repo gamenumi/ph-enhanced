@@ -312,7 +312,7 @@ function GM:PlayerUse(pl, ent)
 			
 			local hullxymax = math.Round(math.Max(ent:OBBMaxs().x, ent:OBBMaxs().y))
 			local hullxymin = hullxymax * -1
-			local hullz = math.Round(ent:OBBMaxs().z)
+			local hullz = math.Round(ent:OBBMaxs().z - ent:OBBMins().z)
 			
 			pl:SetHull(Vector(hullxymin, hullxymin, 0), Vector(hullxymax, hullxymax, hullz))
 			pl:SetHullDuck(Vector(hullxymin, hullxymin, 0), Vector(hullxymax, hullxymax, hullz))
