@@ -65,6 +65,13 @@ function CLASS:OnSpawn(pl)
 		timer.Simple(2, lockfunc)
 		timer.Simple(unlock_time, unlockfunc)
 	end
+
+    timer.Simple(0.1, function()
+		if pl:IsValid() then
+			umsg.Start("AutoTauntSpawn")
+			umsg.End()
+		end
+	end)
 end
 
 

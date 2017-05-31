@@ -14,6 +14,8 @@ AddCSLuaFile("cl_menu.lua")
 AddCSLuaFile("cl_targetid.lua")
 AddCSLuaFile("cl_mutewindow.lua")
 
+AddCSLuaFile("cl_autotaunt.lua")
+
 -- Include the required lua files
 include("sh_init.lua")
 include("sv_admin.lua")

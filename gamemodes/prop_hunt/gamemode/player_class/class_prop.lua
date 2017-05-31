@@ -62,7 +62,14 @@ function CLASS:OnSpawn(pl)
 			end
 		end)
 	end
-	
+
+	timer.Simple(0.1, function()
+		if pl:IsValid() then
+			umsg.Start("AutoTauntSpawn")
+			umsg.End()
+		end
+	end)
+
 	pl.ph_prop.max_health = 100
 end
 
