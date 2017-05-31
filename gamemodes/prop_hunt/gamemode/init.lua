@@ -356,6 +356,7 @@ function GM:ShowSpare1(pl)
 		pl.last_taunt = rand_taunt
 		
 		pl:EmitSound(rand_taunt, 100)
+		pl:SendLua("LocalPlayer().last_taunt_time = CurTime()")
 	end	
 end
 
