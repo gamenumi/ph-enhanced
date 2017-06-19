@@ -89,6 +89,8 @@ end
 ---------------------------------------------------------*/
 function GM:CanPlayerSuicide( ply )
 
+	if not GAMEMODE:InRound() then return false end
+
 	if( ply:Team() == TEAM_UNASSIGNED || ply:Team() == TEAM_SPECTATOR ) then
 		return false // no suicide in spectator mode
 	end
@@ -571,13 +573,15 @@ function GM:PlayerDeathThink( pl )
 end
 
 function GM:GetFallDamage( ply, flFallSpeed )
-	
+
+	if not GAMEMODE:InRound() then return 0 end
+
 	if ( GAMEMODE.RealisticFallDamage ) then
 		return flFallSpeed / 8
 	end
-	
+
 	return 10
-	
+
 end
 
 function GM:PostPlayerDeath( ply )
