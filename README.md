@@ -19,9 +19,9 @@ You can join via IP here:
 
 **ASIA: 128.199.238.151:27015**
 
-**UK: 138.68.154.108:27015 **
+**UK: 138.68.154.108:27015**
 
-**USA: (Offline) **
+**USA: Offline**
 
 If you experiences any client side issues or any client side lua errors, please report it by typing !issue in chat.
 
