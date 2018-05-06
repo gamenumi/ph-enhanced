@@ -2,16 +2,13 @@
 
 Current version: 14, Revision: j, release type: Beta
 
+### VERSION 15 UPDATE NOTICE (IMPORTANT)
+Please be advised to read the upcoming updates related to version 15 here: https://project.wolvindra.net/status/quick/index.php#post_phe_update_v15_notice-6-5-2018
+
 ### Issues that currently we're Investigating
-- Refer to issues #52
 - Refer to any issues labeled with "Enhanced"
 - Refer to any issues labeled with "bug" to prevent any unwanted errors happening in-game
 - Integrate Client-Side Prop movement (prevent 'Laggy' movement for props)
-- Revoke "Think" function for Prop's :SetPos()
-
-### Upcoming v15 Notice
-- We're currently investigating and try to fix some internal issues related to PH:E. Any upcoming/new issues and problems will soon be included and patched after v.15 update has been released.
-- Be sure to check our issues lists. If there's some any serious problem that occurs both in Server and Client side of PH:E, please report them by creating new issues in [Issue Tracker Here.](https://github.com/Vinzuerio/ph-enhanced/issues)
 
 ### Description
 Prop Hunt: Enhanced is an alternate, newer and enhanced version of the Gamemode from original prop hunt which was broken from last Garry's Mod's March 2015 update and decided to make as fixed and newer. This enhanced version is also pretty similar to the classic one, however several things like new codes, files and new features were added in the gamemode to make it
@@ -22,16 +19,15 @@ This was contributted to the old Classic Prop Hunt as for the fixes on march 201
 ### Public Beta Test Server
 We currently hosted a Public Beta Test to experience the gamemode.
 
-You can join via IP here: 
-
-**ASIA: 128.199.238.151:27015**
+To check active test server list, please visit:
+https://sv.wolvin.pw
 
 Server that uses "Prop Hunt: Enhanced Gamemode" will provide you the latest enhanced prop hunt gamemode from Staging Release or Stable Release (if any)
 
 If you experiences any client side issues or any client side lua errors, please report it by typing !issue in chat.
 
 ## Change Logs
-[Click Here to view changelogs](http://project.wolvindra.net/phe/)
+Todo: Make a better Change Logs after v15 has been updated.
 
 ### Key Feature List
 * Prop Rotating
@@ -54,10 +50,14 @@ If you experiences any client side issues or any client side lua errors, please 
 * Added "Waiting for Players..." option, with numbers of minimum player settings
 * and many more!
 
+## Donate
+If you liked & support the development project of Gamemode, please consider to make donation to https://project.wolvindra.net/phe/go/donate_go.php?serveronly=true or https://www.wolvindra.net/donate/ 
+
+Thank you!
+
 ## Required Addons
 * ULX Admin Mods
 * (Optional) M9K Base. You can optionally subscribe the M9K weapon base if you wish to use custom weapon base for bonus weapon, otherwise default sandbox's weapon base.
-* ~~Mapvote~~ Improved and Updated MapVote system has been included in this gamemode so you dont have to modify /data/config.txt again.
 
 ## Workshop Version
 If you wanted for workshop version (ideal for personal/private gaming with your friends), you can [Get it here.](https://steamcommunity.com/sharedfiles/filedetails/?id=417565863)
