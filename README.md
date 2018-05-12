@@ -32,7 +32,7 @@ If you wanted for workshop version (ideal for personal/private gaming with your 
 ## Public Beta Test Server
 We currently hosted a Public Beta Server to test & experience the gamemode, for debugging purpose.
 
-To check active test server list, please visit: ** https://sv.wolvin.pw **
+To check active test server list, please visit: **https://sv.wolvin.pw**
 
 Server that uses "Prop Hunt: Enhanced Gamemode" will provide you the latest enhanced prop hunt gamemode from Stagging Release or Master Stable Release.
 
@@ -72,7 +72,7 @@ If you experiences any client side issues or any client side lua errors, please 
 * Fixed and enhanced fretta codes
 * ...and many more!
 
-##Additional Add-Ons
+## Additional Add-Ons
 
 ### Prop Lock Implementation (for Non-PH: Enhanced)
 Prop-Lock is available which you can implement to your own Prop Hunt version : https://github.com/daunknownman2010/ph-rotation
