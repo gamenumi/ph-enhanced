@@ -196,10 +196,13 @@ function GM:UpdateHUD_Dead( bWaitingToSpawn, InRound )
 	
 	if ( InRound ) then 
 	
+		local TeamIndicator_Name_AddString = "(DEAD) "
+		if ( LocalPlayer():Team() == TEAM_SPECTATOR ) then TeamIndicator_Name_AddString = "" end
+	
 		local TeamIndicator = vgui.Create( "DHudUpdater" );
 			TeamIndicator:SizeToContents()
 			TeamIndicator:SetValueFunction( function() 
-												return "(DEAD) "..team.GetName( LocalPlayer():Team() )
+												return TeamIndicator_Name_AddString..""..team.GetName( LocalPlayer():Team() )
 											end )
 			TeamIndicator:SetColorFunction( function() 
 												return team.GetColor( LocalPlayer():Team() )
@@ -278,10 +281,11 @@ function GM:UpdateHUD_Alive( InRound )
 
 end
 
+--[[
+	this thing is obsolete/depcretaed. Sorry!
+
 function GM:UpdateHUD_AddedTime( iTimeAdded )
 	// to do or to override, your choice
 end
 usermessage.Hook( "RoundAddedTime", function( um ) if( GAMEMODE && um ) then GAMEMODE:UpdateHUD_AddedTime( um:ReadFloat() ) end end )
-
-
-
+]]--

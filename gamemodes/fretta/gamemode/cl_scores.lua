@@ -33,6 +33,9 @@ function GM:AddScoreboardAvatar( ScoreBoard )
 		local av = vgui.Create( "AvatarImage", ScoreBoard )
 			av:SetSize( 32, 32 )
 			av:SetPlayer( ply )
+			av.Click = function()
+				print( "LOL" )
+			end
 			return av
 	end
 	
@@ -61,46 +64,16 @@ end
 function GM:AddScoreboardDeaths( ScoreBoard )
 
 	local f = function( ply ) return ply:Deaths() end
-	ScoreBoard:AddColumn( "Deaths", 40, f, 0.5, nil, 6, 6 )
+	ScoreBoard:AddColumn( "Deaths", 60, f, 0.5, nil, 6, 6 )
 
 end
 
 function GM:AddScoreboardPing( ScoreBoard )
 
-	local f = function( ply ) return ply:Ping() end
+	local f = function( ply ) return ply:ScoreboardPing() end
 	ScoreBoard:AddColumn( "Ping", 40, f, 0.1, nil, 6, 6 )
 
 end
-
---[[
-// Scrapped. to do: fix me 
-
-function GM:AddScoreboardVoice( ScoreBoard )
-
-   local f = function(ply)
-		local vc = vgui.Create("DImageButton", ScoreBoard)
-			vc:SetSize (16,16)
-			if ply != LocalPlayer() then
-				local muted = ply:IsMuted()
-				vc:SetImage(muted and "icon16/sound_mute.png" or "icon16/sound.png")
-			else
-				vc:Hide()
-			end
-			
-			-- click function
-			vc.DoClick = function()
-			   if IsValid(ply) and ply != LocalPlayer() then
-				  ply:SetMuted(not ply:IsMuted())
-			   end
-			end
-			
-			return vc
-	end
-	
-	ScoreBoard:AddColumn( "Mute", 20, f, 0.5, nil, 6, 6 )
-
-end
-]]
 
 // THESE SHOULD BE THE ONLY FUNCTION YOU NEED TO OVERRIDE
 

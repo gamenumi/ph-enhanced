@@ -1,9 +1,12 @@
 -- Code base: Credit to http://steamcommunity.com/id/INCONCEIVABLEINCONCEIVABLE .
 -- Weapon base are now removed due of M9K's version differences.
 
--- This supposed to be a bonus weapon anyway. This gun was a collaboration with my friend (which is now he quits gmod) so I just want to ship it here :)
+-- Alternate version - Credits to: Blast da' Lizard - https://steamcommunity.com/id/blastdalizard
 
--- // Update TFA Supports: Recoil is now adjusted \\
+-- These code are now supports with 3 bases: 
+-- --> TFA
+-- --> M9K
+-- --> Sandbox/default
 
 if GetConVar("DebugM9K") != nil then -- check if M9K is Exists on server. otherwise will use from Default base instead.
 
@@ -42,8 +45,16 @@ if GetConVar("DebugM9K") != nil then -- check if M9K is Exists on server. otherw
 
 	SWEP.ViewModelFOV			= 60
 	SWEP.ViewModelFlip			= false
-	SWEP.ViewModel				= "models/weapons/v_mkbren.mdl"
-	SWEP.WorldModel				= "models/weapons/w_mkbren.mdl"
+	if GetConVar("ph_mkbren_use_new_mdl"):GetBool() then
+		SWEP.ViewModel				= Model("models/weapons/c_mach_brenmk3.mdl")
+		SWEP.WorldModel				= Model("models/weapons/w_mach_brenmk3.mdl")
+		SWEP.UseHands				= true
+	else
+		SWEP.ViewModel				= Model("models/weapons/v_mkbren.mdl")
+		SWEP.WorldModel				= Model("models/weapons/w_mkbren.mdl")
+		SWEP.UseHands				= false
+	end
+	
 	SWEP.ShowWorldModel			= true
 	SWEP.Base					= "bobs_gun_base"
 	SWEP.Spawnable				= false
@@ -51,7 +62,11 @@ if GetConVar("DebugM9K") != nil then -- check if M9K is Exists on server. otherw
 
 	SWEP.FiresUnderwater 		= false
 
-	SWEP.Primary.Sound			= Sound("BREN.Fire")
+	if GetConVar("ph_mkbren_use_new_mdl"):GetBool() then
+		SWEP.Primary.Sound			= Sound("brenmk3.single")
+	else
+		SWEP.Primary.Sound			= Sound("BREN.Fire")
+	end
 	SWEP.Primary.RPM			= 500
 	SWEP.Primary.ClipSize		= 30
 	SWEP.Primary.DefaultClip	= 90
@@ -71,12 +86,35 @@ if GetConVar("DebugM9K") != nil then -- check if M9K is Exists on server. otherw
 	SWEP.Primary.Spread			= .025
 	SWEP.Primary.IronAccuracy 	= .01
 
-	SWEP.IronSightsPos 			= Vector(-3.172, -7.12, 0.425)
-	SWEP.IronSightsAng 			= Vector(2.213, 0, 0)
-	SWEP.SightsPos				= Vector(-3.172, -7.12, 0.425)
-	SWEP.SightsAng				= Vector(2.213, 0, 0)
-	SWEP.RunSightsPos			= Vector(6.369, -10.244, -3.689)
-	SWEP.RunSightsAng			= Vector(6.446, 62.852, 0)
+	if GetConVar("ph_mkbren_use_new_mdl"):GetBool() then
+		SWEP.IronSightsPos = Vector(-3.383, -5.856, 2.49)
+		SWEP.IronSightsAng = Vector(-0.005, 0.009, 0)
+		SWEP.SightsPos = Vector(-3.383, -5.856, 2.49)
+		SWEP.SightsAng = Vector(-0.005, 0.009, 0)
+		SWEP.RunSightsPos = Vector(3, -1.609, -6.97)
+		SWEP.RunSightsAng = Vector(-7.739, 40.804, -30.251)
+		-- for TFA
+		SWEP.Offset = {
+			Pos = {
+				Up = -2.1,
+				Right = 0,
+				Forward = 5.5
+			},
+			Ang = {
+				Up = 90,
+				Right = 178,
+				Forward = 176
+			},
+			Scale = 0.9
+		}
+	else
+		SWEP.IronSightsPos 			= Vector(-3.172, -7.12, 0.425)
+		SWEP.IronSightsAng 			= Vector(2.213, 0, 0)
+		SWEP.SightsPos				= Vector(-3.172, -7.12, 0.425)
+		SWEP.SightsAng				= Vector(2.213, 0, 0)
+		SWEP.RunSightsPos			= Vector(6.369, -10.244, -3.689)
+		SWEP.RunSightsAng			= Vector(6.446, 62.852, 0)
+	end
 
 	-- M9K Weapon properties
 	if GetConVar("M9KDefaultClip") == nil then
@@ -101,7 +139,7 @@ else
 	end
 	
 	if SERVER then
-		printverbose("[ Lucky Ball :: Bren MK ] Server has no default M9K Base, Reverting to normal sandbox base!")
+		printVerbose("[ Lucky Ball :: Bren MK ] Server has no default M9K Base, Reverting to normal sandbox base!")
 	end
 
 	SWEP.Category 				= "Wolvindra-Vinzuerio"
@@ -130,8 +168,16 @@ else
 
 	SWEP.ViewModelFOV			= 60
 	SWEP.ViewModelFlip			= false
-	SWEP.ViewModel				= "models/weapons/v_mkbren.mdl"
-	SWEP.WorldModel				= "models/weapons/w_mkbren.mdl"
+
+	if GetConVar("ph_mkbren_use_new_mdl"):GetBool() then
+		SWEP.ViewModel				= Model("models/weapons/c_mach_brenmk3.mdl")
+		SWEP.WorldModel				= Model("models/weapons/w_mach_brenmk3.mdl")
+		SWEP.UseHands				= true
+	else
+		SWEP.ViewModel				= Model("models/weapons/v_mkbren.mdl")
+		SWEP.WorldModel				= Model("models/weapons/w_mkbren.mdl")
+		SWEP.UseHands				= false
+	end
 
 	function SWEP:Initialize()
 		self:SetWeaponHoldType("ar2")
@@ -148,7 +194,11 @@ else
 		punch.y = math.random(0, 0.1)
 		punch.z = 0
 		
-		self.Weapon:EmitSound(Sound("BREN.Fire"))
+		if GetConVar("ph_mkbren_use_new_mdl"):GetBool() then
+			self.Weapon:EmitSound( Sound("brenmk3.single") )
+		else
+			self.Weapon:EmitSound( Sound("BREN.Fire") )
+		end
 		self:ShootBullet( 35, 1, 0.025)
 		self:TakePrimaryAmmo(1)
 		self.Owner:ViewPunch(Angle(punch.x, punch.y, punch.z))
@@ -166,44 +216,58 @@ end
 
 -- BREN: Firing Sound
 local FS = {}
-	FS["BREN.Fire"]		= "weapons/mkbren/bren_1.wav"
+	if GetConVar("ph_mkbren_use_new_mdl"):GetBool() then
+		FS["brenmk3.single"] = "weapons/brenmk3/shoot.wav"
+	else
+		FS["BREN.Fire"]		 = "weapons/mkbren/bren_1.wav"
+	end
 
 -- BREN: Reloading Sound
 local RS = {}
-	RS["BREN.MagOut"] 	= "weapons/mkbren/bren_magout.wav"
-	RS["BREN.MagIn"] 	= "weapons/mkbren/bren_magin.wav"
-	RS["BREN.BoltPull"] = "weapons/mkbren/bren_boltpull.wav"
-	RS["BREN.Draw"] 	= "weapons/mkbren/bren_draw.wav"
+	if GetConVar("ph_mkbren_use_new_mdl"):GetBool() then
+		RS["brenmk3.draw"]		= "weapons/brenmk3/draw.wav"
+		RS["brenmk3.cloth"]		= "weapons/brenmk3/cloth.wav"
+		RS["brenmk3.boltback"]	= "weapons/brenmk3/boltback.wav"
+		RS["brenmk3.boltforward"]	= "weapons/brenmk3/boltforward.wav"
+		RS["brenmk3.magout"]		= "weapons/brenmk3/magout.wav"
+		RS["brenmk3.magin"]		= "weapons/brenmk3/magin.wav"
+		RS["brenmk3.magtap"]		= "weapons/brenmk3/magtap.wav"
+	else
+		RS["BREN.MagOut"] 	= "weapons/mkbren/bren_magout.wav"
+		RS["BREN.MagIn"] 	= "weapons/mkbren/bren_magin.wav"
+		RS["BREN.BoltPull"] = "weapons/mkbren/bren_boltpull.wav"
+		RS["BREN.Draw"] 	= "weapons/mkbren/bren_draw.wav"
+	end
 
 -- Assign to table.
 local wepsnd = {}
 
-	wepsnd.fire = {
-		channel = CHAN_WEAPON,
-		volume = 1,
-		soundlevel = 120,
-		pitchstart = 100,
-		pitchend = 100
-	}
+wepsnd.fire = {
+	channel = CHAN_WEAPON,
+	volume = 1,
+	soundlevel = 120,
+	pitchstart = 100,
+	pitchend = 100
+}
 
-	for k, v in pairs(FS) do
-		wepsnd.fire.name = k
-		wepsnd.fire.sound = v
-			
-		sound.Add(wepsnd.fire)
-	end	
+for k, v in pairs(FS) do
+	wepsnd.fire.name = k
+	wepsnd.fire.sound = v
+		
+	sound.Add(wepsnd.fire)
+end	
 
-	wepsnd.weps = {
-		channel = CHAN_STATIC,
-		volume = 1,
-		soundlevel = 70,
-		pitchstart = 100,
-		pitchend = 100
-	}
-		
-	for k, v in pairs(RS) do
-		wepsnd.weps.name = k
-		wepsnd.weps.sound = v
-		
-		sound.Add(wepsnd.weps)
-	end
+wepsnd.weps = {
+	channel = CHAN_STATIC,
+	volume = 1,
+	soundlevel = 70,
+	pitchstart = 100,
+	pitchend = 100
+}
+	
+for k, v in pairs(RS) do
+	wepsnd.weps.name = k
+	wepsnd.weps.sound = v
+	
+	sound.Add(wepsnd.weps)
+end
