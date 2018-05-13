@@ -1,7 +1,7 @@
 -- ph_kleiner Configuration.
 -- Add some Invisible Wall to prevent Exploit. Additionaly, Force all player props become Kleiner model after 0.5 seconds of respawn.
 
-local function CreatePlayerClip(min, max)
+function PH_Create_PlayerClip(min, max)
 	local pc = ents.Create("brush_playerclip")
 	
 	pc.min = min
@@ -22,14 +22,14 @@ end
 hook.Add("PreCleanupMap", "PH_RemoveClip", RemoveClipBrush)
 
 
-local function CreatePlayerClip()
+local function PH_Create_PlayerClip()
 	if game.GetMap() == "ph_kliener_v2" && engine.ActiveGamemode() == "prop_hunt" then
 		printVerbose("Creating Anti Exploit walls...")
-		CreatePlayerClip(Vector(1040, -273, 1000), Vector(-1159, -156, 1500))
-		CreatePlayerClip(Vector(-1020, 639, -50), Vector(-1306, 669, 850))
-		CreatePlayerClip(Vector(-1299, 659, -50), Vector(-1312, -1440, 1510))
-		CreatePlayerClip(Vector(-1302, -1434, -371), Vector(1042, -3500, 1500))
-		CreatePlayerClip(Vector(1049, -1432, -50), Vector(1058, -217, 1400))
+		PH_Create_PlayerClip(Vector(1040, -273, 1000), Vector(-1159, -156, 1500))
+		PH_Create_PlayerClip(Vector(-1020, 639, -50), Vector(-1306, 669, 850))
+		PH_Create_PlayerClip(Vector(-1299, 659, -50), Vector(-1312, -1440, 1510))
+		PH_Create_PlayerClip(Vector(-1302, -1434, -371), Vector(1042, -3500, 1500))
+		PH_Create_PlayerClip(Vector(1049, -1432, -50), Vector(1058, -217, 1400))
 		
 		-- Force all players become Kleiner on respawn!
 		timer.Simple(1, function()
@@ -47,4 +47,4 @@ local function CreatePlayerClip()
 		ShadowControl:Activate()
 	end
 end
-hook.Add("PostCleanupMap", "PH_AddClipBrush", CreatePlayerClip)
+hook.Add("PostCleanupMap", "PH_AddClipBrush", PH_Create_PlayerClip)

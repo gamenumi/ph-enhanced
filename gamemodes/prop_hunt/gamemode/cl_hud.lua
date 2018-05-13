@@ -62,7 +62,7 @@ local hudtopbar = {
 }
 
 local ava
-	if (ava || IsValid(ava)) then ava:Remove() ava = nil end
+	if (IsValid(ava)) then ava:Remove() ava = nil end
 local pos = { x = 0, y = ScrH()/1.2 }
 local posind = { x = ScrW() - 384, y = ScrH()/1.4 }
 local hp
@@ -91,18 +91,12 @@ end
 
 local state = false
 local disabledcolor = Color(100,100,100,255)
-local bSpect
-
-net.Receive("RemoveHUDAvatar", function()
-	bSpect = net.ReadBool()
-end)
 
 hook.Add("HUDPaint", "PHE.MainHUD", function()
-
-	if GetConVar("ph_hud_use_new"):GetBool() then state = true else state = false end;
-	if LocalPlayer():Team() == TEAM_SPECTATOR or LocalPlayer():Team() == TEAM_UNASSIGNED then return end
 	
-	if IsValid(LocalPlayer()) && LocalPlayer():Alive() && state then
+	if GetConVar("ph_hud_use_new"):GetBool() then state = true else state = false end;
+	
+	if IsValid(LocalPlayer()) && LocalPlayer():Alive() && state && (LocalPlayer():Team() == TEAM_HUNTERS or LocalPlayer():Team() == TEAM_PROPS) then
 		-- Begin Player Info
 		if not IsValid(ava) then
 			ava = vgui.Create("AvatarMask")
@@ -180,19 +174,19 @@ hook.Add("HUDPaint", "PHE.MainHUD", function()
 		surface.DrawTexturedRect (pos.x+8*39, pos.y+2*37, 32, 32 )
 	end
 	
-	if (IsValid(LocalPlayer()) && !LocalPlayer():Alive()) then
+	if IsValid(LocalPlayer()) && !LocalPlayer():Alive() then
 		if IsValid(ava) then
 			ava:SetVisible(false)
 			ava:Remove()
 		end
 	end
-	if (IsValid(LocalPlayer()) && !state) then
+	if IsValid(LocalPlayer()) && !state then
 		if IsValid(ava) then
 			ava:SetVisible(false)
 			ava:Remove()
 		end
 	end
-	if (IsValid(LocalPlayer())) && bSpect then
+	if IsValid(LocalPlayer()) && (LocalPlayer():Team() == TEAM_SPECTATOR or LocalPlayer():Team() == TEAM_UNASSIGNED) then
 		if IsValid(ava) then
 			ava:SetVisible(false)
 			ava:Remove()

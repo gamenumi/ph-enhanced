@@ -1,7 +1,7 @@
 -- HUNTER TAUNT LISTS
 PHE.PH_TAUNT_CUSTOM.HUNTER = {
 	["Guuuh!"]						=	"vo/k_lab/ba_guh.wav",
-	["If you See Dr. Breen"]		= 	"ba_tellbreen.wav"
+	["If you See Dr. Breen"]		= 	"vo/streetwar/rubble/ba_tellbreen.wav"
 	-- Add more here. don't forget to add comma above after the list ^
 }
 

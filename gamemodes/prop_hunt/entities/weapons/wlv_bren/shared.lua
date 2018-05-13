@@ -93,6 +93,10 @@ if GetConVar("DebugM9K") != nil then -- check if M9K is Exists on server. otherw
 		SWEP.SightsAng = Vector(-0.005, 0.009, 0)
 		SWEP.RunSightsPos = Vector(3, -1.609, -6.97)
 		SWEP.RunSightsAng = Vector(-7.739, 40.804, -30.251)
+		-- for M9K
+		SWEP.WElements = {
+			["W_MkBren1"] = { type = "Model", model = "models/weapons/w_mach_brenmk3.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(4.991, 0.171, -1.693), angle = Angle(0, -90.326, -6.628), size = Vector(0.899, 0.899, 0.899), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+		}
 		-- for TFA
 		SWEP.Offset = {
 			Pos = {
@@ -171,7 +175,7 @@ else
 
 	if GetConVar("ph_mkbren_use_new_mdl"):GetBool() then
 		SWEP.ViewModel				= Model("models/weapons/c_mach_brenmk3.mdl")
-		SWEP.WorldModel				= Model("models/weapons/w_mach_brenmk3.mdl")
+		SWEP.WorldModel				= Model("models/weapons/w_mkbren.mdl") -- The newest model just make it stay on crotch. So let's fallback to old model instead.
 		SWEP.UseHands				= true
 	else
 		SWEP.ViewModel				= Model("models/weapons/v_mkbren.mdl")

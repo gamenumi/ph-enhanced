@@ -114,10 +114,9 @@ end
 -- You can disable this feature by typing 'sv_alltalk 1' in console to make everyone can hear.
 
 -- Control Player Voice
-local alltalk = GetConVar("sv_alltalk")
 function GM:PlayerCanHearPlayersVoice(listen, speaker)
 	
-	local alltalk_cvar = alltalk:GetInt()
+	local alltalk_cvar = GetConVar("sv_alltalk"):GetInt()
 	if (alltalk_cvar > 0) then return true, false end
 	
 	-- prevent Loopback check.
@@ -164,7 +163,7 @@ function GM:PlayerCanSeePlayersChat(txt, onteam, listen, speaker)
 		if listen:Team() == TEAM_SPECTATOR && listen:Alive() && speaker:Alive() then return false end
 	end
 	
-	local alltalk_cvar = alltalk:GetInt()
+	local alltalk_cvar = GetConVar("sv_alltalk"):GetInt()
 	if (alltalk_cvar > 0) then return true end
 	
 	-- Generic Checks
@@ -481,8 +480,8 @@ function GM:OnPreRoundStart(num)
 				else
 					pl:SetTeam(TEAM_PROPS)
 					if GetConVar("ph_notice_prop_rotation"):GetBool() then
-						pl:SendLua( [[notification.AddLegacy("You are in Prop Team with Rotate support! You can rotate the prop around by moving your mouse.", NOTIFY_UNDO, 20 )]] )
-						timer.Simple(1, function() pl:SendLua( [[notification.AddLegacy("Additionally you can toggle lock rotation by pressing R key!", NOTIFY_GENERIC, 18 )]] ) end)
+						timer.Simple(0.5, function() pl:SendLua( [[notification.AddLegacy("You are in Prop Team with Rotate support! You can rotate the prop around by moving your mouse.", NOTIFY_UNDO, 20 )]] ) end)
+						pl:SendLua( [[notification.AddLegacy("Additionally you can toggle lock rotation by pressing R key!", NOTIFY_GENERIC, 18 )]] )
 						pl:SendLua( [[surface.PlaySound("garrysmod/content_downloaded.wav")]] )
 					end
 				end
@@ -668,22 +667,3 @@ function PlayerPressedKey(pl, key)
 	end
 end
 hook.Add("KeyPress", "PlayerPressedKey", PlayerPressedKey)
-
--- Clear the Avatar Icon
-local function ClearAvatar(ply, oldt, newt)
-	if ply:IsBot() then return end
-	if IsValid(ply) then
-		if newt == TEAM_SPECTATOR then
-			net.Start("RemoveHUDAvatar")
-			net.WriteBool(true)
-			net.Send(ply)
-		end
-		
-		if (newt == TEAM_HUNTERS or newt == TEAM_PROPS) then
-			net.Start("RemoveHUDAvatar")
-			net.WriteBool(false)
-			net.Send(ply)
-		end
-	end
-end
-hook.Add("OnPlayerChangedTeam", "ClearHUD.PLAvatar", ClearAvatar)
