@@ -109,8 +109,10 @@ function CoolDownDoStuff()
 end
 
 function MapVote.GetFromULX()
-	if table.Count(ulx) > 0 then
+	if IsValid(ulx) && table.Count(ulx) > 0 then
 		return ulx.votemaps
+	else
+		return false
 	end
 end
 
