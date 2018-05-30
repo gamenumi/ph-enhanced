@@ -26,7 +26,11 @@ function CLASS:OnSpawn(pl)
 	pl:SetCustomCollisionCheck(true)
 	pl:SetupHands()
 	pl:SetAvoidPlayers(true)
-	pl:CrosshairDisable()
+	pl:CrosshairEnable()
+	
+	-- Initial Setup during Prop choosing a props. Jump-Duck may still required somehow.
+	pl:SetViewOffset(Vector(0,0,64))
+	pl:SetViewOffsetDucked(Vector(0,0,28))
 	
 	-- Prevent 'mod_studio: MOVETYPE_FOLLOW with No Models error.'
 	pl:DrawViewModel(false)
@@ -51,10 +55,13 @@ function CLASS:OnSpawn(pl)
 	pl.ph_prop:SetOwner(pl)
 	pl:SetNWEntity("PlayerPropEntity", pl.ph_prop)
 	
-	-- Delay start the AutoTaunt stuff
-	timer.Simple(0.5, function()
+	-- Delay start the AutoTaunt stuff and Control Tutorial
+	timer.Simple(1, function()
 		if IsValid(pl) then
 			net.Start("AutoTauntSpawn")
+			net.Send(pl)
+			
+			net.Start("PH_ShowTutor")
 			net.Send(pl)
 		end
 	end)
@@ -76,6 +83,9 @@ function CLASS:OnDeath(pl, attacker, dmginfo)
 	net.Start("PHE.rotateState")
 	net.WriteInt(0, 2)
 	net.Send(pl)
+	
+	pl:SetViewOffset(Vector(0,0,64))
+	pl:SetViewOffsetDucked(Vector(0,0,28))
 end
 
 
