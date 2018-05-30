@@ -214,7 +214,7 @@ hook.Add("HUDPaint", "PHE.MainHUD", function()
 			if (clip < 0 || maxclip < 0) then
 				percent = 0
 			else
-				percent = math.Round(clip / maxclip * 100)
+				percent = math.Round(clip / maxclip * 300)
 			end
 			
 			draw.NoTexture()
