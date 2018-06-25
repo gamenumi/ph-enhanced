@@ -115,16 +115,16 @@ ENT.funclists = {
 	end,
 	function(pl)
 		if !pl.ph_FrozeHunter then
-			if table.Count(team.GetPlayers(TEAM_HUNTERS)) >= 3 then
+			if #team.GetPlayers(TEAM_HUNTERS) >= 3 then
 				pl:ChatPrint("[Devil Crystal] Hunters are frozen!")
 				pl:SendLua("surface.PlaySound('prop_idbs/surface_prop_froze_hunter.wav')")
 				pl.ph_FrozeHunter = true
 				for _,v in pairs(player.GetAll()) do
-					if v:Alive() && v:Team() == TEAM_HUNTERS then
+					if v:Team() == TEAM_HUNTERS && v:Alive() then
 						v:Freeze(true)
 						v:EmitSound(Sound("prop_idbs/govarchz_pickup.wav"))
 						v:ChatPrint("[Devil Crystal] Oops, you are temporary frozen...!")
-						v.Unfrooze = timer.Simple(math.random(2,3),
+						v.UnFrooze = timer.Simple(math.random(2,3),
 						function()
 							v:ChatPrint("[Devil Crystal] You are free now!")
 							v:EmitSound(Sound("prop_idbs/froze_done.wav"))
