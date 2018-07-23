@@ -1,7 +1,6 @@
 include("sh_init.lua")
 include("sh_config.lua")
 CL_GLOBAL_LIGHT_STATE	= 0
-PHE_DONT_SHOW_MESSAGES	= 0
 include("cl_hud_mask.lua")
 include("cl_hud.lua")
 include("cl_menu.lua")
@@ -431,31 +430,29 @@ net.Receive("SetBlind", function()
 end)
 
 local cooldown	= 86400
-net.Receive("ShowDonateInfo", function()
-	if (PHE_DONT_SHOW_MESSAGES || GetConVar("cl_permhide_donate"):GetBool()) then return end
+net.Receive("utilWLVShowMessage", function()
+	if (GetConVar("cl_permhide_donate"):GetBool()) then return end
 
-	Derma_Query("If you enjoyed and interested with our gamemodes, Would you like to consider Support Us? Your Support really does help for our gamemode development & progress!", "Support our Gamemode!",
-	"Sure", function()
-		gui.OpenURL("https://project.wolvindra.net/phe/go/donate_go.php?gamemodeonly=true")
-	end
-	"No, Later", function()
-		local nextDonateNotify = cookie.GetNumber("nextDonateNotify",0)
-		local time		 = os.time()
-		
-		if time < nextDonateNotify then
-			print("[PH: Enhanced] - Skipping Donation Message. Will show the message again later on "..os.date("%Y/%m/%d - %H:%M:%S",nextDonateNotify))
-		else	
+	local nextDonateNotify = cookie.GetNumber("nextDonateNotify",0)
+	local time		 = os.time()
+	
+	if time < nextDonateNotify then
+		print("[PH: Enhanced] - Skipping Donation Message. Will show the message again later on "..os.date("%Y/%m/%d - %H:%M:%S",nextDonateNotify))
+	else
+		Derma_Query("Hello! This message is from the Author of Prop Hunt: Enhanced (Wolvindra-Vinzuerio), Would you like to take a time for a moment?\nIf you are enjoyed and interested with Prop Hunt: Enhanced gamemode, Would you consider take a moment to support?\n\nYour Support is really helpful for the gamemode development! Thank you :)\n\n(Note: if you are an admin, you can disable this message under F1 Admin Prop Hunt Menu)", "[ Prop Hunt: Enhanced ] - Support Our Gamemode!",
+		"Sure!", function()
+			print("[PH: Enhanced] - Opening the page...")
+			gui.OpenURL("https://project.wolvindra.net/phe/go/donate_go.php?gamemodeonly=true")
+		end,
+		"No but remind me later", function()
 			cookie.Set("nextDonateNotify", time + cooldown)
-			
-			timer.Simple(5, function()
-				PHE_DONT_SHOW_MESSAGES = true
-				print("[PH: Enhanced] - Skipping Donation Message. Will show the message again later on "..os.date("%Y/%m/%d - %H:%M:%S",nextDonateNotify))
-			end)
-		end
+			print("[PH: Enhanced] - Skipping Donation Message for Tomorrow...")
+		end,
+		"No, Don't show this message", function()
+			print("[PH: Enhanced] - Skipping Donation Message Permanently...")
+			RunConsoleCommand("cl_permhide_donate","1")
+		end)
 	end
-	"Don't show this message again", function() 
-		RunConsoleCommand("cl_permhide_donate","1")
-	end)
 end)
 
 --[[ Here you can add more than 2 additional freeze cam sounds. 

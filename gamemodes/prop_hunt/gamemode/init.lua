@@ -435,13 +435,14 @@ hook.Add("PlayerDisconnected", "PH_PlayerDisconnected", PlayerDisconnected)
 hook.Add("PlayerInitialSpawn", "PHE.SetupInitData", function(ply)
 	ply.LastPickupEnt = NULL
 	
-	
-	timer.Simple(math.random(4,8), function()
-		if !IsValid(ply) then return end
-		
-		net.Start("utilWLVShowMessage")
-		net.Send(ply)
-	end)
+	if GetConVar("ph_sv_enable_donation_message"):GetBool() then
+		timer.Simple(6, function()
+			if !IsValid(ply) then return end
+			
+			net.Start("utilWLVShowMessage")
+			net.Send(ply)
+		end)
+	end
 end)
 hook.Add("AllowPlayerPickup", "PHE.IsHoldingEntity", function(ply,ent)
 	ply.LastPickupEnt = ent

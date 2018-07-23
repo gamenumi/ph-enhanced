@@ -413,7 +413,7 @@ if SERVER then
 		end
 		
 		if ( !file.Exists(dir.."/model_bans.txt","DATA") ) then
-			file.Write( dir.."/model_bans.txt", mdlpermabans ,true) )
+			file.Write( dir.."/model_bans.txt", mdlpermabans ,true )
 		end
 		
 		--[[

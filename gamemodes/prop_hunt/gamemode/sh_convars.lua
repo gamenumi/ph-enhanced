@@ -71,3 +71,7 @@ CreateConVar("ph_reload_obb_setting_everyround", "1",{ FCVAR_SERVER_CAN_EXECUTE,
 
 -- Enable Custom Taunt Scanner Directory
 CreateConVar("ph_enable_taunt_scandir","1",{ FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE }, "Enable Custom Taunt Auto-Scanning Directory. (This will add taunts such as Taunt #N => 'taunts/path.wav' automatically)")
+
+
+-- This is for a temporary.
+CreateConVar("ph_sv_enable_donation_message", "1", { FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE, FCVAR_NOTIFY }, "Enable a support message for the Prop Hunt: Enhanced gamemode. It's okay if you want to disable this :)")
