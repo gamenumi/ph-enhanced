@@ -38,6 +38,9 @@ hook.Add("PH_CustomTabMenu", "PHE.About", function(tab, pVgui)
 	
 	pVgui("","label","PHE.TitleFont",grid, label.title .. " [BETA]" )
 	pVgui("","label","Trebuchet24",grid, "Current Version: "..label.version.." | Current Revision: "..label.rev)
+	pVgui("spacer0","spacer",nil,grid,"" )
+	pVgui("","label","Trebuchet24",grid, "If you are enjoyed with the gamemode, Please support by Donating!" )
+	pVgui("spacer0a","spacer",nil,grid,"" )
 	pVgui("","label",false,grid, "Changelog & Updates" )
 	pVgui("","btn",{max = 2,textdata = {
 		[1] = {"See Changelog", 	  function() gui.OpenURL(label.lklog); tab:GetParent():Close() end},

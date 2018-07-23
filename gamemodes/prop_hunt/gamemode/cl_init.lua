@@ -1,6 +1,7 @@
 include("sh_init.lua")
 include("sh_config.lua")
-CL_GLOBAL_LIGHT_STATE = 0
+CL_GLOBAL_LIGHT_STATE	= 0
+PHE_DONT_SHOW_MESSAGES	= 0
 include("cl_hud_mask.lua")
 include("cl_hud.lua")
 include("cl_menu.lua")
@@ -27,6 +28,8 @@ function Initialize()
 	CreateClientConVar("ph_show_team_topbar", "1", true, false, "Show total alive team players bar on the top left (Experimental)")
 	CreateClientConVar("ph_show_custom_crosshair","1",true,false,"Show custom crosshair for props")
 	CreateClientConVar("ph_show_tutor_control","1",true,false,"Show 'Prop Gameplay Control' hud on each prop spawns. This only show twice and reset until map changes/user disconnect.")
+	
+	CreateClientConVar("cl_permhide_donate","0",true,true, "Show Donation Message on Every Initial Spawn?")
 	
 	CL_GLIMPCAM 	= 0
 	MAT_LASERDOT 	= Material("sprites/glow04_noz")
@@ -425,6 +428,34 @@ end)
 -- Sets the local blind variable to be used in CalcView
 net.Receive("SetBlind", function()
 	blind = net.ReadBool()
+end)
+
+local cooldown	= 86400
+net.Receive("ShowDonateInfo", function()
+	if (PHE_DONT_SHOW_MESSAGES || GetConVar("cl_permhide_donate"):GetBool()) then return end
+
+	Derma_Query("If you enjoyed and interested with our gamemodes, Would you like to consider Support Us? Your Support really does help for our gamemode development & progress!", "Support our Gamemode!",
+	"Sure", function()
+		gui.OpenURL("https://project.wolvindra.net/phe/go/donate_go.php?gamemodeonly=true")
+	end
+	"No, Later", function()
+		local nextDonateNotify = cookie.GetNumber("nextDonateNotify",0)
+		local time		 = os.time()
+		
+		if time < nextDonateNotify then
+			print("[PH: Enhanced] - Skipping Donation Message. Will show the message again later on "..os.date("%Y/%m/%d - %H:%M:%S",nextDonateNotify))
+		else	
+			cookie.Set("nextDonateNotify", time + cooldown)
+			
+			timer.Simple(5, function()
+				PHE_DONT_SHOW_MESSAGES = true
+				print("[PH: Enhanced] - Skipping Donation Message. Will show the message again later on "..os.date("%Y/%m/%d - %H:%M:%S",nextDonateNotify))
+			end)
+		end
+	end
+	"Don't show this message again", function() 
+		RunConsoleCommand("cl_permhide_donate","1")
+	end)
 end)
 
 --[[ Here you can add more than 2 additional freeze cam sounds. 

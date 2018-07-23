@@ -434,6 +434,14 @@ hook.Add("PlayerDisconnected", "PH_PlayerDisconnected", PlayerDisconnected)
 -- Set specific variable for checking in player initial spawn, then use Player:IsHoldingEntity()
 hook.Add("PlayerInitialSpawn", "PHE.SetupInitData", function(ply)
 	ply.LastPickupEnt = NULL
+	
+	
+	timer.Simple(math.random(4,8), function()
+		if !IsValid(ply) then return end
+		
+		net.Start("utilWLVShowMessage")
+		net.Send(ply)
+	end)
 end)
 hook.Add("AllowPlayerPickup", "PHE.IsHoldingEntity", function(ply,ent)
 	ply.LastPickupEnt = ent
