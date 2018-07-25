@@ -413,7 +413,7 @@ if SERVER then
 		end
 		
 		if ( !file.Exists(dir.."/model_bans.txt","DATA") ) then
-			file.Write( dir.."/model_bans.txt", mdlpermabans ,true )
+			file.Write( dir.."/model_bans.txt", util.TableToJSON( mdlpermabans, true ))
 		end
 		
 		--[[
@@ -435,7 +435,7 @@ if SERVER then
 		if ( file.Exists ( dir.."/model_bans.txt","DATA" ) ) then
 			local PROP_MODEL_BANS_READ = util.JSONToTable(file.Read(dir.."/model_bans.txt"))
 			-- empty the tables anyway.
-			table.Empty(PHE.BANNED_PROP_MODELS)
+			table.Empty(PHE.BANNED_PROP_MODELS)	
 			for _,v in pairs(PROP_MODEL_BANS_READ) do
 				printVerbose("[PH:E Model Bans] Adding entry of restricted model to be used --> "..string.lower(v))
 				table.insert(PHE.BANNED_PROP_MODELS, string.lower(v))
