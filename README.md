@@ -1,13 +1,24 @@
-# Wolvin's - Prop Hunt: ENHANCED v.15 Rev. E
+# Wolvin's - Prop Hunt: ENHANCED v.15 Rev. F
 
 ![alt text](https://sv.wolvin.pw/Public/phe-logo.png "Prop Hunt: Enhanced v.15")
 
 ![alt text](https://sv.wolvin.pw/Public/phe-prophunt_main.jpg "Prop Hunt: Enhanced v.15 New Main Menu")
 
 ## Information
-**Version: 15, Revision: E release type: Public**
+**Version: 15, Revision: F release type: Public "End Support"**
 
-### Description
+### End Support "Fix-to-Fail"
+**Please note that this version will be the last development which will may not be maintained anymore**
+
+The current version will be no longer maintained as it is a fixed version of the gamemode-breaking from Revision E. The gamemode will be left untouched after the release of revision F.
+Currently, it will be marked as Hiatus, if it doesn't, the gamemode will be remain permanently not maintained. Sorry about this!
+
+**However**, you could continue contributing, recontributing with your own version of Enhanced Prop Hunt by your own by forking or simply re-made them over. The main purpose of the gamemode is
+enhance the Classic Prop Hunt with modern enhancement. Or, if you really have no idea on how to help contributes by coding, you can also participating the contribution by Donation.
+
+https://www.wolvindra.net/donate/
+
+### Main gamemode Description
 Prop Hunt: Enhanced is an enhanced version of Classic original **Prop Hunt** Gamemode. The gamemode is focused to be always maintained and fully customizable with many things.
 The gamemode also includes several many major changes including the HUD, the code optimisation, Player skins, and other kind of additional features.
 
@@ -15,15 +26,15 @@ The gamemode was contributted to the old Classic Prop Hunt as for the fixes on m
 maintained anymore.
 
 ### Available Links
-[**Full Changelogs**](https://project.wolvindra.net/phe/new/?go=changelog)
+[**Full Changelogs**](https://prophunt.wolvindra.net/phe/new/?go=changelog)
 
-[**Wiki: Help & FAQs**](https://project.wolvindra.net/phe/new/?go=phe_faq)
+[**Wiki: Help & FAQs**](https://prophunt.wolvindra.net/phe/new/?go=phe_faq)
 
-[**Downloads**](https://project.wolvindra.net/phe/new/?go=downloads)
+[**Downloads**](https://prophunt.wolvindra.net/phe/new/?go=downloads)
 
 Support the Project (We've been hardworking for this gamemode to stay updated!):
 
-[**Donate**](https://project.wolvindra.net/phe/new/?go=donate)
+[**Donate**](https://prophunt.wolvindra.net/phe/new/?go=donate)
 
 If you wanted for workshop version (ideal for personal/private gaming with your friends):
 
@@ -43,8 +54,6 @@ If you experiences any client side issues or any client side lua errors, please 
 * (Optional) M9K/TFA Base. You can optionally subscribe the M9K weapon base if you wish to use custom weapon base for bonus weapon, otherwise will use from default sandbox weapon base.
 
 ## Key Feature List
-
-### What's New
 * New Prop Hunt: Enhanced HUD
 * New Lucky Balls Icon
 * New "Named-Taunts", no more "weirdnames.wav" anymore!
@@ -54,8 +63,6 @@ If you experiences any client side issues or any client side lua errors, please 
 * MapVote: You are now able to grab from Whitelisted ULX Votemaps maplist
 * New Hooks Added! (See **Wiki: Help & FAQ)
 * Improved Server Configuration via [F1] Prop Hunt Menu
-
-### Features
 * Prop Rotating
 * Freeze Cam Feature
 * Camera Collision
@@ -74,11 +81,7 @@ If you experiences any client side issues or any client side lua errors, please 
 
 ## Additional Add-Ons
 
-### Prop Lock Implementation (for Non-PH: Enhanced)
-Prop-Lock is available which you can implement to your own Prop Hunt version : https://github.com/daunknownman2010/ph-rotation
-
-### Prop Hunt Events
-Adds events to the Prop Hunt: Enhanced **ONLY** gamemode : https://github.com/daunknownman2010/phe-events
+You can find out add-ons & plugins which can be accessed on: https://prophunt.wolvindra.net/phe/new/?go=plugins
 
 ## Reporting an Issue
 

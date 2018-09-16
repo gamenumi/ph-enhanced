@@ -1,3 +1,31 @@
+CreateClientConVar("ph_cl_halos", "1", true, true, "Toggle Enable/Disable Halo effects when choosing a prop.")
+CreateClientConVar("ph_cl_pltext", "1", true, false, "Options for Text above players. 0 = Disable. 1 = Enable.")
+CreateClientConVar("ph_cl_endround_sound", "1", true, false, "Play a sound when round ends? 0 to disable.")
+CreateClientConVar("ph_cl_autoclose_taunt", "1", true, false, "Auto close the taunt window (When Double Clicking on them)?")
+CreateClientConVar("ph_cl_spec_hunter_line", "1", true, false, "Draw a line on hunters so we can see their aim in spectator mode.")
+CreateClientConVar("cl_enable_luckyballs_icon", "1", true,false, "Enable 'Lucky ball' icon to be displayed once they spawned")
+CreateClientConVar("cl_enable_devilballs_icon", "1", true,false, "Enable 'Devil ball' icon to be displayed once they spawned")
+CreateClientConVar("ph_hud_use_new", "1", true, false, "Use new PH: Enhanced HUD")
+CreateClientConVar("ph_show_team_topbar", "1", true, false, "Show total alive team players bar on the top left (Experimental)")
+CreateClientConVar("ph_show_custom_crosshair","1",true,false,"Show custom crosshair for props")
+CreateClientConVar("ph_show_tutor_control","1",true,false,"Show 'Prop Gameplay Control' hud on each prop spawns. This only show twice and reset until map changes/user disconnect.")
+
+CreateClientConVar("cl_permhide_donate","0",true,true, "Show Donation Message on Every Initial Spawn?")
+
+surface.CreateFont( "HunterBlindLockFont",
+	{
+		font	= "Arial",
+		size	= 14,
+		weight	= 1200,
+		antialias = true,
+		underline = false
+	})
+
+	surface.CreateFont("TrebuchetBig", {
+		font = "Impact",
+		size = 40
+	})
+
 include("sh_init.lua")
 include("sh_config.lua")
 CL_GLOBAL_LIGHT_STATE	= 0
@@ -16,36 +44,8 @@ function Initialize()
 	client_prop_light = false
 	blind = false
 	
-	CreateClientConVar("ph_cl_halos", "1", true, true, "Toggle Enable/Disable Halo effects when choosing a prop.")
-	CreateClientConVar("ph_cl_pltext", "1", true, false, "Options for Text above players. 0 = Disable. 1 = Enable.")
-	CreateClientConVar("ph_cl_endround_sound", "1", true, false, "Play a sound when round ends? 0 to disable.")
-	CreateClientConVar("ph_cl_autoclose_taunt", "1", true, false, "Auto close the taunt window (When Double Clicking on them)?")
-	CreateClientConVar("ph_cl_spec_hunter_line", "1", true, false, "Draw a line on hunters so we can see their aim in spectator mode.")
-	CreateClientConVar("cl_enable_luckyballs_icon", "1", true,false, "Enable 'Lucky ball' icon to be displayed once they spawned")
-	CreateClientConVar("cl_enable_devilballs_icon", "1", true,false, "Enable 'Devil ball' icon to be displayed once they spawned")
-	CreateClientConVar("ph_hud_use_new", "1", true, false, "Use new PH: Enhanced HUD")
-	CreateClientConVar("ph_show_team_topbar", "1", true, false, "Show total alive team players bar on the top left (Experimental)")
-	CreateClientConVar("ph_show_custom_crosshair","1",true,false,"Show custom crosshair for props")
-	CreateClientConVar("ph_show_tutor_control","1",true,false,"Show 'Prop Gameplay Control' hud on each prop spawns. This only show twice and reset until map changes/user disconnect.")
-	
-	CreateClientConVar("cl_permhide_donate","0",true,true, "Show Donation Message on Every Initial Spawn?")
-	
 	CL_GLIMPCAM 	= 0
 	MAT_LASERDOT 	= Material("sprites/glow04_noz")
-	
-	surface.CreateFont( "HunterBlindLockFont",
-	{
-		font	= "Arial",
-		size	= 14,
-		weight	= 1200,
-		antialias = true,
-		underline = false
-	})
-
-	surface.CreateFont("TrebuchetBig", {
-		font = "Impact",
-		size = 40
-	})
 end
 hook.Add("Initialize", "PH_Initialize", Initialize)
 
@@ -433,22 +433,26 @@ local cooldown	= 86400
 net.Receive("utilWLVShowMessage", function()
 	if (GetConVar("cl_permhide_donate"):GetBool()) then return end
 
-	local nextDonateNotify = cookie.GetNumber("nextDonateNotify",0)
+	local nextPHEDevNotify = cookie.GetNumber("nextPHEDevNotify",0)
 	local time		 = os.time()
 	
-	if time < nextDonateNotify then
-		print("[PH: Enhanced] - Skipping Donation Message. Will show the message again later on "..os.date("%Y/%m/%d - %H:%M:%S",nextDonateNotify))
+	if time < nextPHEDevNotify then
+		print("[PH: Enhanced] - Skipping Donation Message. Will show the message again later on "..os.date("%Y/%m/%d - %H:%M:%S",nextPHEDevNotify))
 	else
-		Derma_Query("Hello! This message is from the Author of Prop Hunt: Enhanced (Wolvindra-Vinzuerio), Would you like to take a time for a moment?\nIf you are enjoyed and interested with Prop Hunt: Enhanced gamemode, Would you consider take a moment to support?\n\nYour Support is really helpful for the gamemode development! Thank you :)\n\n(Note: if you are an admin, you can disable this message under F1 Admin Prop Hunt Menu)", "[ Prop Hunt: Enhanced ] - Support Our Gamemode!",
-		"Sure!", function()
-			print("[PH: Enhanced] - Opening the page...")
-			gui.OpenURL("https://project.wolvindra.net/phe/go/donate_go.php?gamemodeonly=true")
+		Derma_Query("Hello!\nIt seems you are enjoying the latest version of Prop Hunt: Enhanced. Unfortunately, PH:E may be facing to End of Development, which mean will be no support/development in future. The reason is I may not able to continue the project because of no proper computer available.\n\nIf you'd like to help to continue, you can contribute by yourself/fork on GitHub. Or, if you are zero-idea on coding, you could contribute by Donating. It really helps and hopefully achieve to the goal and make the enhanced version alive again!", "[ Prop Hunt: Enhanced ] - End of Development",
+		"Contribute on GitHub", function()
+			print("[PH: Enhanced] - Opening the GitHub page...")
+			gui.OpenURL("https://github.com/Vinzuerio/ph-enhanced")
 		end,
-		"No but remind me later", function()
-			cookie.Set("nextDonateNotify", time + cooldown)
+		"Help by Donating", function()
+			print("[PH: Enhanced] - Opening the Donation page...")
+			gui.OpenURL("https://prophunt.wolvindra.net/phe/go/donate_go.php?gamemodeonly=true")
+		end,
+		"Remind me later", function()
+			cookie.Set("nextPHEDevNotify", time + cooldown)
 			print("[PH: Enhanced] - Skipping Donation Message for Tomorrow...")
 		end,
-		"No, Don't show this message", function()
+		"Stop showing this", function()
 			print("[PH: Enhanced] - Skipping Donation Message Permanently...")
 			RunConsoleCommand("cl_permhide_donate","1")
 		end)
