@@ -26,15 +26,15 @@ The gamemode was contributted to the old Classic Prop Hunt as for the fixes on m
 maintained anymore.
 
 ### Available Links
-[**Full Changelogs**](https://prophunt.wolvindra.net/phe/new/?go=changelog)
+[**Full Changelogs**](https://prophunt.wolvindra.net/new/?go=changelog)
 
-[**Wiki: Help & FAQs**](https://prophunt.wolvindra.net/phe/new/?go=phe_faq)
+[**Wiki: Help & FAQs**](https://prophunt.wolvindra.net/new/?go=phe_faq)
 
-[**Downloads**](https://prophunt.wolvindra.net/phe/new/?go=downloads)
+[**Downloads**](https://prophunt.wolvindra.net/new/?go=downloads)
 
 Support the Project (We've been hardworking for this gamemode to stay updated!):
 
-[**Donate**](https://prophunt.wolvindra.net/phe/new/?go=donate)
+[**Donate**](https://prophunt.wolvindra.net/new/?go=donate)
 
 If you wanted for workshop version (ideal for personal/private gaming with your friends):
 
@@ -43,14 +43,14 @@ If you wanted for workshop version (ideal for personal/private gaming with your 
 ## Public Beta Test Server
 We currently hosted a Public Beta Server to test & experience the gamemode, for debugging purpose.
 
-To check active test server list, please visit: **https://sv.wolvin.pw**
+To check active test server list, please visit: https://sv.wolvin.pw
 
 Server that uses "Prop Hunt: Enhanced Gamemode" will provide you the latest enhanced prop hunt gamemode from Stagging Release or Master Stable Release.
 
 If you experiences any client side issues or any client side lua errors, please report it by typing !issue in the chat.
 
 ## Required Addons
-* ULX Admin Mod. (Both Workshop and/or via http://ulyssesmod.net/downloads.php)
+* ULX Admin Mod. ( Workshop or Legacy Download: http://ulyssesmod.net/downloads.php )
 * (Optional) M9K/TFA Base. You can optionally subscribe the M9K weapon base if you wish to use custom weapon base for bonus weapon, otherwise will use from default sandbox weapon base.
 
 ## Key Feature List
@@ -81,7 +81,7 @@ If you experiences any client side issues or any client side lua errors, please 
 
 ## Additional Add-Ons
 
-You can find out add-ons & plugins which can be accessed on: https://prophunt.wolvindra.net/phe/new/?go=plugins
+You can find out add-ons & plugins which can be accessed on: https://prophunt.wolvindra.net/new/?go=plugins
 
 ## Reporting an Issue
 
