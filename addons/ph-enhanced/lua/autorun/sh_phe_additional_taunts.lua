@@ -2,13 +2,13 @@
 local taunts = {}
 
 -- Begin Table: Hunters
-local taunts.Hunter = {
+taunts.Hunter = {
 	["Guuuh!"]						=	"vo/k_lab/ba_guh.wav",
 	["If you See Dr. Breen"]		= 	"vo/streetwar/rubble/ba_tellbreen.wav"
 	-- Add more Hunters Taunt here...
 }
 -- Begin Table: Props
-local taunts.Props = {
+taunts.Props = {
 	["Windows XP Shutdown"]			=	"taunts/ph_enhanced/ext_xp_off.wav",
 	["Windows XP Startup"]			=	"taunts/ph_enhanced/ext_xp_start.wav"
 	-- Add more Props Taunt here...
