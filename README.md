@@ -1,16 +1,12 @@
 # Wolvin's - Prop Hunt: ENHANCED v.15 Rev. F
 
-![alt text](https://sv.wolvin.pw/Public/phe-logo.png "Prop Hunt: Enhanced v.15")
-
-![alt text](https://sv.wolvin.pw/Public/phe-prophunt_main.jpg "Prop Hunt: Enhanced v.15 New Main Menu")
-
 ## Information
 **Version: 15, Revision: F release type: Public "End Support"**
 
-### End Support "Fix-to-Fail"
-**Please note that this version will be the last development which will may not be maintained anymore**
+## Please Note
+**Please note that this master branch is no longer maintained. Please refer to this branch to continue: https://github.com/Vinzuerio/ph-enhanced/tree/v15-g**
 
-The current version will be no longer maintained as it is a fixed version of the gamemode-breaking from Revision E. The gamemode will be left untouched after the release of revision F.
+The current (master) version will be no longer maintained as it is a fixed version of the gamemode-breaking from Revision E. The gamemode will be left untouched after the release of revision F.
 Currently, it will be marked as Hiatus, if it doesn't, the gamemode will be remain permanently not maintained. Sorry about this!
 
 **However**, you could continue contributing, recontributing with your own version of Enhanced Prop Hunt by your own by forking or simply re-made them over. The main purpose of the gamemode is
