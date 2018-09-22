@@ -5,7 +5,7 @@
 ![alt text](https://sv.wolvin.pw/Public/phe-prophunt_main.jpg "Prop Hunt: Enhanced v.15 New Main Menu")
 
 ## Information
-**Version: 15, Revision: F release type: Public "End Support"**
+**Version: 15, Revision: G release type: Public "Extended Support"**
 
 ### End Support "Fix-to-Fail"
 **Please note that this version will be the last development which will may not be maintained anymore**

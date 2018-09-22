@@ -2,6 +2,10 @@
 PHE = {}
 PHE.__index = PHE
 
+-- Some config stuff
+AddCSLuaFile("config/sh_init.lua")
+include("config/sh_init.lua")
+
 -- Initialize and Add ConVar Blocks.
 AddCSLuaFile("sh_convars.lua")
 include("sh_convars.lua")
@@ -34,8 +38,8 @@ else
 end
 
 -- Updates!
-AddCSLuaFile("sh_httpupdates.lua")
-include("sh_httpupdates.lua")
+--AddCSLuaFile("sh_httpupdates.lua")
+--include("sh_httpupdates.lua")
 
 -- Fretta!
 DeriveGamemode("fretta")
