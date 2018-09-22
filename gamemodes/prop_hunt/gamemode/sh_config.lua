@@ -210,7 +210,7 @@ local function AddDemTaunt()
 	end
 	
 end
-hook.Add("InitPostEntity", "PHE.AddTauntTables", AddDemTaunt)
+hook.Add("Initialize", "PHE.AddTauntTables", AddDemTaunt)
 
 -- External Use only, such as Taunt Collection and stuff.
 -- MAKE SURE TO CALL 'PHE:RefreshTauntList()' AFTER ADDING YOUR CUSTOM TAUNTS!
@@ -323,7 +323,8 @@ function PHE:RefreshTauntList()
 	table.sort(PHE.HUNTER_TAUNTS)
 	table.sort(PHE.PH_TAUNT_CUSTOM.HUNTER)
 end
-hook.Add("Initialize","PHE.RefreshTaunts",function()
+
+hook.Add("InitPostEntity","PHE.RefreshTaunts",function()
 	PHE:RefreshTauntList()
 end)
 
