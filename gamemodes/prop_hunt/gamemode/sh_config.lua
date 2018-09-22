@@ -1,5 +1,7 @@
 -- Global Var for custom taunt, delivering from taunts/prop -or- hunter_taunts.lua
 PHE.PH_TAUNT_CUSTOM = {}
+PHE.PH_TAUNT_CUSTOM.PROP = {}
+PHE.PH_TAUNT_CUSTOM.HUNTER = {}
 
 -- Time (in seconds) for spectator check (Default: 0.1)
 PHE.SPECTATOR_CHECK_ADD = 0.1
