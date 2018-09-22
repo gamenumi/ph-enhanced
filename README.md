@@ -1,4 +1,4 @@
-# Wolvin's - Prop Hunt: ENHANCED v.15 Rev. F
+# Wolvin's - Prop Hunt: ENHANCED v.15 Rev. G
 
 ![alt text](https://sv.wolvin.pw/Public/phe-logo.png "Prop Hunt: Enhanced v.15")
 
