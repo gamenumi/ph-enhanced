@@ -1,22 +1,13 @@
-# Wolvin's - Prop Hunt: ENHANCED v.15 Rev. G
+# Wolvin's - Prop Hunt: ENHANCED v.15 Rev. H
 
-![alt text](https://sv.wolvin.pw/Public/phe-logo.png "Prop Hunt: Enhanced v.15")
+![Prop Hunt: Enhanced Logo](https://sv.wolvin.pw/Public/phe-logo.png "Prop Hunt: Enhanced v.15")
 
-![alt text](https://sv.wolvin.pw/Public/phe-prophunt_main.jpg "Prop Hunt: Enhanced v.15 New Main Menu")
+![Prop Hunt: Enhanced Cover](https://sv.wolvin.pw/Public/phe-prophunt_main.jpg "Prop Hunt: Enhanced v.15 New Main Menu")
 
 ## Information
-**Version: 15, Revision: G release type: Public "Extended Support"**
+**Version: 15, Revision: H release type: Public "(Minor Updates)"**
 
-### End Support "Fix-to-Fail"
-**Please note that this version will be the last development which will may not be maintained anymore**
-
-The current version will be no longer maintained as it is a fixed version of the gamemode-breaking from Revision E. The gamemode will be left untouched after the release of revision F.
-Currently, it will be marked as Hiatus, if it doesn't, the gamemode will be remain permanently not maintained. Sorry about this!
-
-**However**, you could continue contributing, recontributing with your own version of Enhanced Prop Hunt by your own by forking or simply re-made them over. The main purpose of the gamemode is
-enhance the Classic Prop Hunt with modern enhancement. Or, if you really have no idea on how to help contributes by coding, you can also participating the contribution by Donation.
-
-https://www.wolvindra.net/donate/
+*This update will receive occassional updates since the development status are on hiatus.*
 
 ### Main gamemode Description
 Prop Hunt: Enhanced is an enhanced version of Classic original **Prop Hunt** Gamemode. The gamemode is focused to be always maintained and fully customizable with many things.
@@ -79,7 +70,7 @@ If you experiences any client side issues or any client side lua errors, please 
 * Fixed and enhanced fretta codes
 * ...and many more!
 
-## Additional Add-Ons
+## Additional Add-Ons / Plugins
 
 You can find out add-ons & plugins which can be accessed on: https://prophunt.wolvindra.net/new/?go=plugins
 

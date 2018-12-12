@@ -24,16 +24,16 @@ hook.Add("PH_CustomTabMenu", "PHE.About", function(tab, pVgui)
 	
 	local label = {
 		title 	= "Prop Hunt: Enhanced",
-		author	= "Enhanced by: Wolvindra-Vinzuerio, D4UNKN0WNM4N. Original: AMT.",
+		author	= "Enhanced by: Wolvindra-Vinzuerio, D4UNKN0WNM4N & Lucky. Original: AMT.",
 		version = GAMEMODE._VERSION,
 		rev 	= GAMEMODE.REVISION,
-		credits	= "Yam, Godfather, adk, Lucas2107, Jonpopnycorn, Thundernerd",
+		credits	= "Yam, Lucky, Godfather, adk, Lucas2107, Jonpopnycorn, Thundernerd",
 		lgit	= "https://github.com/Vinzuerio/ph-enhanced/",
-		lhome	= "https://project.wolvindra.net/phe/",
+		lhome	= "https://prophunt.wolvindra.net/",
 		ldonate = GAMEMODE.DONATEURL,
-		lwiki	= "https://project.wolvindra.net/phe/?go=phe_faq",
-		lklog	= "https://project.wolvindra.net/phe/?go=changelog",
-		lplugins = "https://project.wolvindra.net/phe/?go=plugins"
+		lwiki	= "https://prophunt.wolvindra.net/?go=phe_faq",
+		lklog	= "https://prophunt.wolvindra.net/?go=changelog",
+		lplugins = "https://prophunt.wolvindra.net/?go=plugins"
 	}
 	
 	pVgui("","label","PHE.TitleFont",grid, label.title .. " [BETA]" )
@@ -55,7 +55,7 @@ hook.Add("PH_CustomTabMenu", "PHE.About", function(tab, pVgui)
 		[1] = {"DONATE to PH:E Project", 	  function() gui.OpenURL(label.ldonate) end},
 		[2] = {"PH:E Official Homepage", 	  function() gui.OpenURL(label.lhome) end},
 		[3] = {"GitHub Repository", 	  	  function() gui.OpenURL(label.lgit) end},
-		[4] = {"PH:E Help & Wiki", 			  function() gui.OpenURL(label.lwiki) end},
+		[4] = {"PH:E Manuals & Wiki", 		  function() gui.OpenURL(label.lwiki) end},
 		[4] = {"PH:E Addons/Plugins", 		  function() gui.OpenURL(label.lplugins) end}
 	}},grid,"")
 	pVgui("spacer1","spacer",nil,grid,"" )
