@@ -24,7 +24,7 @@ hook.Add("PH_CustomTabMenu", "PHE.About", function(tab, pVgui)
 	
 	local label = {
 		title 	= "Prop Hunt: Enhanced",
-		author	= "Enhanced by: Wolvindra-Vinzuerio, D4UNKN0WNM4N & Lucky. Original: AMT.",
+		author	= "Enhanced by: Wolvindra-Vinzuerio & D4UNKN0WNM4N.",
 		version = GAMEMODE._VERSION,
 		rev 	= GAMEMODE.REVISION,
 		credits	= "Yam, Lucky, Godfather, adk, Lucas2107, Jonpopnycorn, Thundernerd",

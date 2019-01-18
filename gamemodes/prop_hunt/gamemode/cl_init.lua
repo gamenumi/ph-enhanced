@@ -429,37 +429,6 @@ net.Receive("SetBlind", function()
 	blind = net.ReadBool()
 end)
 
--- D4: this could be considered nagging, perhaps improve this idea? Oh and get rid of the TAB spaces too
---[[ local cooldown	= 86400
-net.Receive("utilWLVShowMessage", function()
-	if (GetConVar("cl_permhide_donate"):GetBool()) then return end
-
-	local nextPHEDevNotify = cookie.GetNumber("nextPHEDevNotify",0)
-	local time		 = os.time()
-	
-	if time < nextPHEDevNotify then
-		print("[PH: Enhanced] - Skipping Donation Message. Will show the message again later on "..os.date("%Y/%m/%d - %H:%M:%S",nextPHEDevNotify))
-	else
-		Derma_Query("Hello!\nIt seems you are enjoying the latest version of Prop Hunt: Enhanced.\nUnfortunately, PH:E may be facing to End of Development, which mean will be no support/development in future. The reason is I may not able to continue the project because of no proper computer available.\n\nIf you'd like to help to continue, you can contribute by yourself/fork on GitHub. Or, if you are zero-idea on coding, you could contribute by Donating. It really helps and hopefully achieve to the goal and make the enhanced version alive again!", "[ Prop Hunt: Enhanced ] - End of Development",
-		"Contribute on GitHub", function()
-			print("[PH: Enhanced] - Opening the GitHub page...")
-			gui.OpenURL("https://github.com/Vinzuerio/ph-enhanced")
-		end,
-		"Help by Donating", function()
-			print("[PH: Enhanced] - Opening the Donation page...")
-			gui.OpenURL("https://prophunt.wolvindra.net/phe/go/donate_go.php?gamemodeonly=true")
-		end,
-		"Remind me later", function()
-			cookie.Set("nextPHEDevNotify", time + cooldown)
-			print("[PH: Enhanced] - Skipping Donation Message for Tomorrow...")
-		end,
-		"Stop showing this", function()
-			print("[PH: Enhanced] - Skipping Donation Message Permanently...")
-			RunConsoleCommand("cl_permhide_donate","1")
-		end)
-	end
-end) ]]--
-
 --[[ Here you can add more than 2 additional freeze cam sounds. 
 You can add more sounds by using table.insert(PHE.FreezeCamSnd, <path file>) repeatedly outside of this code scope.
 Example:

@@ -51,7 +51,7 @@ IncludePlayerClasses()
 
 -- Information about the gamemode
 GM.Name		= "Prop Hunt: ENHANCED"
-GM.Author	= "Wolvindra-Vinzuerio, D4UNKN0WNM4N2010 & Lucky"
+GM.Author	= "Wolvindra-Vinzuerio, D4UNKN0WNM4N2010"
 
 GM._VERSION = "15"
 GM.REVISION	= "H"
