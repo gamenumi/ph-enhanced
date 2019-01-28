@@ -1,13 +1,13 @@
-# Wolvin's - Prop Hunt: ENHANCED v.15 Rev. H.2
+# Wolvin's - Prop Hunt: ENHANCED v.15 Rev. H.3
 
 ![Prop Hunt: Enhanced Logo](https://sv.wolvin.pw/Public/phe-logo.png "Prop Hunt: Enhanced v.15")
 
 ![Prop Hunt: Enhanced Cover](https://sv.wolvin.pw/Public/phe-prophunt_main.jpg "Prop Hunt: Enhanced v.15 New Main Menu")
 
 ## Information
-**Version: 15, Revision: H.2, Release Type: Public**
+**Version: 15, Revision: H.3, Release Type: Testing**
 
-Minor Update (*This update will receive occassional updates since the development status are on hiatus.*)
+Minor update to address some exploits and other things.
 
 ### Main gamemode Description
 Prop Hunt: Enhanced is an enhanced version of Classic original **Prop Hunt** Gamemode. The gamemode is focused to be always maintained and fully customizable with many things.

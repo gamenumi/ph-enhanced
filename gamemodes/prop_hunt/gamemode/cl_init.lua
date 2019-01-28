@@ -322,30 +322,8 @@ function PHEDrawPropselectHalos()
 end
 hook.Add("PreDrawHalos", "PHEDrawPropselectHalos", PHEDrawPropselectHalos)
 
--- the 'Accurate' prop disguise and Play random taunt.
-hook.Add("KeyPress", "tracetest.GetPropInfo", function(pl,key)
-	if ((pl:Team() == TEAM_PROPS && pl:Alive()) && key == IN_ATTACK) then	
-		local trace = {}
-		if cHullz < 24 then
-			trace.start = LocalPlayer():EyePos() + Vector(0, 0, cHullz + (24-cHullz))
-			trace.endpos = LocalPlayer():EyePos() + Vector(0, 0, cHullz + (24-cHullz)) + LocalPlayer():EyeAngles():Forward() * 100
-		elseif cHullz > 84 then
-			trace.start = LocalPlayer():EyePos() + Vector(0, 0, cHullz - 84)
-			trace.endpos = LocalPlayer():EyePos() + Vector(0, 0, cHullz - 84) + LocalPlayer():EyeAngles():Forward() * 300
-		else
-			trace.start = LocalPlayer():EyePos() + Vector(0, 0, 8)
-			trace.endpos = LocalPlayer():EyePos() + Vector(0, 0, 8) + LocalPlayer():EyeAngles():Forward() * 100
-		end
-		trace.filter = ents.FindByClass("ph_prop")
-		
-		local trace2 = util.TraceLine(trace) 
-		if trace2.Entity && trace2.Entity:IsValid() && table.HasValue(PHE.USABLE_PROP_ENTITIES, trace2.Entity:GetClass()) then
-			net.Start("CL2SV_ExchangeProp")
-			net.WriteEntity(trace2.Entity)
-			net.SendToServer()
-		end
-	end
-	
+-- Play random taunt
+hook.Add("KeyPress", "tracetest.GetPropInfo", function(pl, key)
 	if ((pl:Team() == TEAM_PROPS && pl:Alive()) && key == IN_ATTACK2) then
 		LocalPlayer():ConCommand("gm_showspare1")
 	end

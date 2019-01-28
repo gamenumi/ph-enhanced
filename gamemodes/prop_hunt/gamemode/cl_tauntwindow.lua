@@ -202,7 +202,6 @@ local function MainFrame()
 			net.Start("CL2SV_PlayThisTaunt"); net.WriteString(tostring(snd)); net.SendToServer();
 			isplayed = true
 			timer.Simple(GetConVar("ph_customtaunts_delay"):GetInt(), function() isplayed = false; end)
-			LocalPlayer().last_taunt_time = CurTime()
 		else
 			chat.AddText(Color(220,40,0),"[PH:E - Taunts] Warning: ",Color(220,220,220),"You have to wait "..GetConVar("ph_customtaunts_delay"):GetInt().." seconds to play this taunt again!")
 		end
