@@ -27,7 +27,7 @@ hook.Add("PH_CustomTabMenu", "PHE.About", function(tab, pVgui)
 		author	= "Enhanced by: Wolvindra-Vinzuerio & D4UNKN0WNM4N.",
 		version = GAMEMODE._VERSION,
 		rev 	= GAMEMODE.REVISION,
-		credits	= "Yam, Lucky, Godfather, adk, Lucas2107, Jonpopnycorn, Thundernerd",
+		credits	= "Yam, Godfather, adk, Lucas2107, Jonpopnycorn, Thundernerd",
 		lgit	= "https://github.com/Vinzuerio/ph-enhanced/",
 		lhome	= "https://prophunt.wolvindra.net/",
 		ldonate = GAMEMODE.DONATEURL,
@@ -36,7 +36,7 @@ hook.Add("PH_CustomTabMenu", "PHE.About", function(tab, pVgui)
 		lplugins = "https://prophunt.wolvindra.net/?go=plugins"
 	}
 	
-	pVgui("","label","PHE.TitleFont",grid, label.title .. " [BETA]" )
+	pVgui("","label","PHE.TitleFont",grid, label.title )
 	pVgui("","label","Trebuchet24",grid, "Current Version: "..label.version.." | Current Revision: "..label.rev)
 	pVgui("","label","Trebuchet24",grid, "If you are enjoyed with the gamemode, Please support by Donating!" )
 	pVgui("spacer0","spacer",nil,grid,"" )

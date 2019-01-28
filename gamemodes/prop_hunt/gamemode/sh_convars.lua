@@ -70,4 +70,4 @@ local obb_mod	= CreateConVar("ph_sv_enable_obb_modifier", "1",{ FCVAR_SERVER_CAN
 local obb_every = CreateConVar("ph_reload_obb_setting_everyround", "1",{ FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE }, "Developer: Reload OBB Model Data Modifier Every round Restarts")
 
 -- This is for a temporary.
-local donation_message = CreateConVar("ph_sv_enable_donation_message", "1", { FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE, FCVAR_NOTIFY }, "Enable a support message for the Prop Hunt: Enhanced gamemode. It's okay if you want to disable this :)")
+local check_boundaries = CreateConVar("phe_check_props_boundaries", "0", { FCVAR_SERVER_CAN_EXECUTE, FCVAR_REPLICATED, FCVAR_ARCHIVE, FCVAR_NOTIFY }, "[EXPERIMENTAL] This feature is under Work-in-Progress! Enable prop boundaries Check? This will prevent you to stuck with other objects/Wall.")

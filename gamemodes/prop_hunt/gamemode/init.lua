@@ -376,8 +376,20 @@ end
 -- Called when a player tries to use an object. By default this pressed ['E'] button. MouseClick 1 will be mentioned below at line @351
 function GM:PlayerUse(pl, ent)
 	if !pl:Alive() || pl:Team() == TEAM_SPECTATOR || pl:Team() == TEAM_UNASSIGNED then return false end
-	
-	self:PlayerExchangeProp(pl,ent)
+
+	-- Prevent Execution Spam by holding ['E'] button too long.
+	if pl.UseTime <= CurTime() then
+		
+		local hmx,hz = ent:GetPropSize()
+		if (GetConVar("phe_check_props_boundaries"):GetBool() && !pl:CheckHull(hmx,hmx,hz)) then
+			pl:SendLua([[chat.AddText(Color(235,10,15), "[PH: Enhanced]", Color(220,220,220), " There is no room to change that prop!")]])
+		else
+			self:PlayerExchangeProp(pl,ent)
+		end
+		
+		pl.UseTime = CurTime() + 1
+		
+	end
 	
 	-- Prevent the door exploit
 	if table.HasValue(PHE.EXPLOITABLE_DOORS, ent:GetClass()) && pl.last_door_time && pl.last_door_time + 1 > CurTime() then
@@ -391,8 +403,19 @@ end
 net.Receive("CL2SV_ExchangeProp", function(len,ply)
 	local Prop = net.ReadEntity()
 	
-	if !ply:IsHoldingEntity() then
-		GAMEMODE:PlayerExchangeProp(ply,Prop)
+	if ply.UseTime <= CurTime() then
+	
+		if !ply:IsHoldingEntity() then
+			local hmx,hz = Prop:GetPropSize()
+			if (GetConVar("phe_check_props_boundaries"):GetBool() && !ply:CheckHull(hmx,hmx,hz)) then
+				ply:SendLua([[chat.AddText(Color(235,10,15), "[PH: Enhanced]", Color(220,220,220), " There is no room to change that prop!")]])
+			else
+				GAMEMODE:PlayerExchangeProp(ply,Prop)
+			end
+		end
+		
+		ply.UseTime = CurTime() + 1
+		
 	end
 end)
 
@@ -434,15 +457,7 @@ hook.Add("PlayerDisconnected", "PH_PlayerDisconnected", PlayerDisconnected)
 -- Set specific variable for checking in player initial spawn, then use Player:IsHoldingEntity()
 hook.Add("PlayerInitialSpawn", "PHE.SetupInitData", function(ply)
 	ply.LastPickupEnt = NULL
-	
-	if GetConVar("ph_sv_enable_donation_message"):GetBool() then
-		timer.Simple(6, function()
-			if !IsValid(ply) then return end
-			
-			net.Start("utilWLVShowMessage")
-			net.Send(ply)
-		end)
-	end
+	ply.UseTime = 0
 end)
 hook.Add("AllowPlayerPickup", "PHE.IsHoldingEntity", function(ply,ent)
 	ply.LastPickupEnt = ent

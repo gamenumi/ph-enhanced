@@ -1,11 +1,11 @@
-# Wolvin's - Prop Hunt: ENHANCED v.15 Rev. H
+# Wolvin's - Prop Hunt: ENHANCED v.15 Rev. H.2
 
 ![Prop Hunt: Enhanced Logo](https://sv.wolvin.pw/Public/phe-logo.png "Prop Hunt: Enhanced v.15")
 
 ![Prop Hunt: Enhanced Cover](https://sv.wolvin.pw/Public/phe-prophunt_main.jpg "Prop Hunt: Enhanced v.15 New Main Menu")
 
 ## Information
-**Version: 15, Revision: H, Release Type: Public**
+**Version: 15, Revision: H.2, Release Type: Public**
 
 Minor Update (*This update will receive occassional updates since the development status are on hiatus.*)
 

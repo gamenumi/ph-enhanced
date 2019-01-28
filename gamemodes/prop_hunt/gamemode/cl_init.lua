@@ -10,8 +10,6 @@ CreateClientConVar("ph_show_team_topbar", "1", true, false, "Show total alive te
 CreateClientConVar("ph_show_custom_crosshair","1",true,false,"Show custom crosshair for props")
 CreateClientConVar("ph_show_tutor_control","1",true,false,"Show 'Prop Gameplay Control' hud on each prop spawns. This only show twice and reset until map changes/user disconnect.")
 
-CreateClientConVar("cl_permhide_donate","0",true,true, "Show Donation Message on Every Initial Spawn?")
-
 surface.CreateFont( "HunterBlindLockFont",
 	{
 		font	= "Arial",
@@ -253,7 +251,7 @@ function HUDPaint()
 		end
 		trace.filter = ents.FindByClass("ph_prop")
 		
-		local trace2 = util.TraceLine(trace) 
+		local trace2 = util.TraceLine(trace)
 		if trace2.Entity && trace2.Entity:IsValid() && table.HasValue(PHE.USABLE_PROP_ENTITIES, trace2.Entity:GetClass()) then
 			color = Color(10,255,10,255)
 		else

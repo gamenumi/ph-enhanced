@@ -6,7 +6,10 @@ PHE.__index = PHE
 AddCSLuaFile("config/sh_init.lua")
 include("config/sh_init.lua")
 
--- ULX
+AddCSLuaFile("sh_drive_prop.lua")
+include("sh_drive_prop.lua")
+
+-- ULX Mapvote
 AddCSLuaFile("ulx/modules/sh/sh_phe_mapvote.lua")
 include("ulx/modules/sh/sh_phe_mapvote.lua")
 
@@ -51,10 +54,10 @@ IncludePlayerClasses()
 
 -- Information about the gamemode
 GM.Name		= "Prop Hunt: ENHANCED"
-GM.Author	= "Wolvindra-Vinzuerio, D4UNKN0WNM4N2010"
+GM.Author	= "Wolvindra-Vinzuerio & D4UNKN0WNM4N2010"
 
 GM._VERSION = "15"
-GM.REVISION	= "H"
+GM.REVISION	= "H2"
 GM.DONATEURL = "https://prophunt.wolvindra.net/go/donate_go.php?gamemodeonly=true"
 GM.UPDATEURL = "https://raw.githubusercontent.com/Vinzuerio/ph-enhanced/master/updates/version.json"
 
